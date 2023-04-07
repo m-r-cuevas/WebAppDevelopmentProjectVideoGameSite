@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
+// Added Name to test for Git Lab : Maria
 namespace ContosoCrafts.WebSite.Pages
 {
     public class IndexModel : PageModel
