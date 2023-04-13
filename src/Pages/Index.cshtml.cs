@@ -9,6 +9,9 @@ using ContosoCrafts.WebSite.Services;
 // Added Name to test for Git Lab : Maria
 namespace ContosoCrafts.WebSite.Pages
 {
+    /// <summary>
+    /// Maria Cuevas
+    /// </summary>
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
