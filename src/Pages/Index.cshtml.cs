@@ -9,7 +9,7 @@ using ContosoCrafts.WebSite.Services;
 namespace ContosoCrafts.WebSite.Pages
 {
     /// <summary>
-    /// Maria Cuevas
+    /// Sri Sai Srikanth Reddy Vundyala
     /// </summary>
     public class IndexModel : PageModel
     {
