@@ -6,10 +6,11 @@ using Microsoft.Extensions.Logging;
 using ContosoCrafts.WebSite.Models;
 using ContosoCrafts.WebSite.Services;
 
-// Added Name to test for Git Lab : Maria
 namespace ContosoCrafts.WebSite.Pages
 {
-
+    /// <summary>
+    /// Ravi Tarun Prasad Nimmalapudi
+    /// </summary>
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
