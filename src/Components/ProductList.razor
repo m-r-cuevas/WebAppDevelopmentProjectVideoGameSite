@@ -13,8 +13,13 @@
             <h5 class="card-title">@product.Title</h5>
         </div>
         <div class="card-footer">
+            <!-- Updated button name to "View More".-Maria -->
             <small class="text-muted"><button @onclick="(e => SelectProduct(product.Id))" 
-              data-toggle="modal" data-target="#productModal" class="btn btn-primary">More Info</button>
+              data-toggle="modal" data-target="#productModal" class="btn btn-primary">View More</button>
+            </small>
+            <!-- Added right aligned download button. Still directs to product info. -Maria -->
+            <small class="text-muted float-right"><button @onclick="(e => SelectProduct(product.Id))" 
+              data-toggle="modal" data-target="#productModal" class="btn btn-primary">Download</button>
             </small>
         </div>
     </div>
