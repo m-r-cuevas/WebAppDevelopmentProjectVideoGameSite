@@ -53,6 +53,11 @@ a.navbar-brand {
     word-break: break-all;
 }
 
+/*Update colour of the body. -Ravi */
+.background-color{
+    color:black;
+}
+
 /* Provide sufficient contrast against white background */
 a {
    color: #0366d6;
@@ -110,6 +115,8 @@ html {
 }
 
 body {
+    /*Updated the background colour. -Ravi */
+    background-color:black;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
 }
