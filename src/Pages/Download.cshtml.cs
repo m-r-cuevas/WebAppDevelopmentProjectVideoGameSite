@@ -3,11 +3,11 @@ using Microsoft.Extensions.Logging;
 
 namespace ContosoCrafts.WebSite.Pages
 {
-    public class PrivacyModel : PageModel
+    public class DownloadModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<DownloadModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public DownloadModel(ILogger<DownloadModel> logger)
         {
             _logger = logger;
         }
