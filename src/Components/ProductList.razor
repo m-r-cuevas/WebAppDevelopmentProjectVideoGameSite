@@ -26,7 +26,10 @@
 }
 </div>
 
-@if(selectedProduct != null)
+
+<!--Commented the part of code unnecessary for this sprint -Srikanth -->
+@*
+@if(selectedProduct == null)
 {
   <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -72,6 +75,7 @@
     </div>
   </div>
 }
+*@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
