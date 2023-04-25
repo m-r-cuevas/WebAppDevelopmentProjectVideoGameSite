@@ -6,6 +6,8 @@ namespace ContosoCrafts.WebSite.Models
     public class ProductModel
     {
         public string Id { get; set; }
+        // Added a property called "Name" -Ravi.
+        public string Name { get; set; }
         public string Maker { get; set; }
         
         [JsonPropertyName("img")]
