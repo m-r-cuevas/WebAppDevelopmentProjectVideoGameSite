@@ -2,6 +2,8 @@
 @using ContosoCrafts.WebSite.Services
 @using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
+<!-- Injected Navigation Manager so we could navigate between pages or components -Ravi. -->
+@inject NavigationManager NavManager
 
 <div class="card-columns">
 @foreach (var product in ProductService.GetProducts())
@@ -15,8 +17,9 @@
         </div>
         <div class="card-footer">
             <!-- Updated button name to "View More".-Maria -->
-            <small class="text-muted"><button @onclick="(e => SelectProduct(product.Id))" 
-              data-toggle="modal" data-target="#productModal" class="btn btn-primary">View More</button>
+            <small class="text-muted">
+                <!-- Using navigation updated the onclick funtionality to respective destination -Ravi. -->
+            <button @onclick="(e => MovetoView(product.Id))" id="ViewMoreButton_@product.Id" class="btn btn-primary">View More</button>
             </small>
             <!-- Added right aligned download button. Still directs to product info. -Maria -->
             <small class="text-muted float-right"><button @onclick="(e => SelectProduct(product.Id))" 
@@ -139,4 +142,10 @@
       ProductService.AddRating(selectedProductId, rating);
       SelectProduct(selectedProductId);
     }
+    // Defining a function and setting the path for the nav manager. -Ravi.
+    void MovetoView(string id)
+    {
+        NavManager.NavigateTo("../Product/View/" + id, true);
+    }
 }
+
