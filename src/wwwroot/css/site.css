@@ -132,6 +132,11 @@ p {
 h1 {
     font-family: 'Nunito', sans-serif;
 }
+/* Added a font color of white for level 4 headers */
+h4 {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF;
+}
 ul {
     font-family: 'Nunito', sans-serif;
 }
