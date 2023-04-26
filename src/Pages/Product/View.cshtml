@@ -1,0 +1,58 @@
+﻿@page "{id}"
+@using ContosoCrafts.WebSite.Services
+@inject JsonFileProductService ProductService
+@model ContosoCrafts.WebSite.Pages.Product.ViewModel
+
+
+
+@{
+    ViewData["Title"] = "View Page";
+}
+
+
+
+<div class="content-bgcolor">
+    <h1>View</h1>
+    <h5 class="title" id="productTitle">@Model.Product.Title</h5>
+
+
+
+    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+
+
+    <table class="table table-bordered table-striped content-container">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var property in Model.Product.GetType().GetProperties())
+    {
+            <tr>
+                <td>@property.Name</td>
+                <td>@(property.Name == "Ratings" ? Model.GetAverageRating(Model.Product.Id) : property.GetValue(Model.Product))</td>
+
+            </tr>
+    }
+        </tbody>
+
+    </table>
+
+
+
+</div>
+
+
+
+<br />
+<br />
+
+
+
+<div class="row">
+    <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a> &nbsp; &nbsp;
+    <a asp-page="Delete" asp-route-id="@Model.Product.Id" class="btn btn-danger">Delete</a>
+</div>
