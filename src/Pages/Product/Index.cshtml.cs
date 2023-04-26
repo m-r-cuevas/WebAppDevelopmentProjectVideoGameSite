@@ -32,10 +32,11 @@ namespace ContosoCrafts.WebSite.Pages.Product
         /// REST OnGet
         /// Return all the data
         /// </summary>
-        /*public void OnGet()
+        /// Fixed name of method GetAllProducts() --> GetProducts. -Maria
+        public void OnGet()
         {
-            Products = ProductService.GetAllData();
+            Products = ProductService.GetProducts();
         }
-        */
+        
     }
 }
