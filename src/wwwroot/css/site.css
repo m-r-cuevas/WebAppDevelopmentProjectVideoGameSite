@@ -151,3 +151,8 @@ ul {
 .bg-table {
     background-color: white;
 }
+
+/*Added Hover color for the buttons on nav bar */
+a.text-light:hover, a.text-light:focus {
+    color: #ffa500 !important;
+}
