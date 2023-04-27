@@ -9,8 +9,17 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace ContosoCrafts.WebSite.Services
 {
-   public class JsonFileProductService
+    /// <summary>
+    /// JsonFileProductService
+    /// Accesses, adds and modifies products in Products.json
+    /// </summary>
+    public class JsonFileProductService
     {
+        /// <summary>
+        /// JsonFileProductService constructor
+        /// Initializes the webHostEnvironment object
+        /// </summary>
+        /// <param name="webHostEnvironment"></param>
         public JsonFileProductService(IWebHostEnvironment webHostEnvironment)
         {
             WebHostEnvironment = webHostEnvironment;
@@ -18,11 +27,18 @@ namespace ContosoCrafts.WebSite.Services
 
         public IWebHostEnvironment WebHostEnvironment { get; }
 
+        /// <summary>
+        /// Method that returns the path of the products.json file
+        /// </summary>
         private string JsonFileName
         {
             get { return Path.Combine(WebHostEnvironment.WebRootPath, "data", "products.json"); }
         }
 
+        /// <summary>
+        /// Gets all products from Products.json
+        /// </summary>
+        /// <returns>IEnumerable list of products</returns>
         public IEnumerable<ProductModel> GetProducts()
         {
             using(var jsonFileReader = File.OpenText(JsonFileName))
@@ -35,9 +51,14 @@ namespace ContosoCrafts.WebSite.Services
             }
         }
 
+        /// <summary>
+        /// Updating a product rating in Products.json
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <param name="rating"></param>
         public void AddRating(string productId, int rating)
         {
-            var products = GetProducts();
+            var products = GetProducts(); //Stores all products.
 
             if(products.First(x => x.Id == productId).Ratings == null)
             {
