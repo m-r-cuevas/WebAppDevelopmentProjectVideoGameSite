@@ -1,10 +1,11 @@
 ﻿@page
 @using ContosoCrafts.WebSite.Components
+<!-- model directive sets the model type for the view. -->
 @model IndexModel
 @{
     ViewData["Title"] = "Home page";
 }
-
+<!-- The RenderMode.ServerPrerendered parameter renderes on the server before being sent to the client. -->
 @(await Html.RenderComponentAsync<ProductList>(RenderMode.ServerPrerendered))
 
 <script src="_framework/blazor.server.js"></script>
