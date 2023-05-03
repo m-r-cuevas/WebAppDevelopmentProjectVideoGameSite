@@ -9,7 +9,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "2",
     "Name": "God of War",
@@ -20,7 +19,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "3",
     "Name": "Total Overdose",
@@ -31,7 +29,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "4",
     "Name": "Valorant",
@@ -42,7 +39,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "5",
     "Name": "Rocket League",
@@ -53,7 +49,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "6",
     "Name": "Fortnite",
@@ -64,7 +59,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "7",
     "Name": "GTA 5",
@@ -85,7 +79,6 @@
     "Description": "Coming Soon",
     "Ratings": null
   },
-
   {
     "Id": "9",
     "Name": "WWE",
@@ -94,6 +87,16 @@
     "Url": "https://images3.alphacoders.com/953/953930.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "Ratings": null
+  },
+  {
+    "Id": "91",
+    "Name": "Enter the name of the location.",
+    "Maker": null,
+    "img": "Enter the image url for the location.",
+    "Url": null,
+    "Title": "Enter a title for the location.",
+    "Description": "Enter a description for the location.",
     "Ratings": null
   }
 ]
