@@ -117,33 +117,5 @@ namespace ContosoCrafts.WebSite.Services
 
             return data;
         }
-
-        //This function is responsible to populate data in json file.
-        public ProductModel CreateData()
-        {
-
-            //Create a new data entry
-            var data = new ProductModel()
-            {
-                //Get the last id and add 1 to it
-                Id = (GetProducts().Last().Id + 1).ToString(),
-                Name = "Enter the name of the location.",
-                Title = "Enter a title for the location.",
-                Description = "Enter a description for the location.",
-                Image = "Enter the image url for the location.",
-            };
-
-            // Retrieves the data from the json file.
-            var dataSet = GetProducts();
-
-            //Adds the latest data at the end of the list.
-            var newDataSet = dataSet.Append(data);
-
-            //Saves the latest data to the json file.
-            SaveData(newDataSet);
-
-            //Returns the latest data that was just entered.
-            return data;
-        }
     }
 }
