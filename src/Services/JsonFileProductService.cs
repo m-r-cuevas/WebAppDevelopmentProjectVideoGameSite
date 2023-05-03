@@ -117,5 +117,32 @@ namespace ContosoCrafts.WebSite.Services
 
             return data;
         }
+
+        public ProductModel CreateData()
+        {
+
+            //Create a new data entry
+            var data = new ProductModel()
+            {
+                //Get the last id and add 1 to it
+                Id = (GetProducts().Last().Id + 1).ToString(),
+                Name = "Enter the name of the location.",
+                Title = "Enter a title for the location.",
+                Description = "Enter a description for the location.",
+                Image = "Enter the image url for the location.",
+            };
+
+            // Retrieve the data from the json file
+            var dataSet = GetProducts();
+
+            //Add the new data to the end of the list
+            var newDataSet = dataSet.Append(data);
+
+            //Save the new data to the json file
+            SaveData(newDataSet);
+
+            //Return the data entry that was just created
+            return data;
+        }
     }
 }
