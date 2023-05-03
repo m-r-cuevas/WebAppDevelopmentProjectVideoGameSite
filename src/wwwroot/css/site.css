@@ -129,8 +129,14 @@ body {
 p {
     font-family: 'Nunito', sans-serif;
 }
+/* Update color for level 1 headers to show on dark background*/
 h1 {
     font-family: 'Nunito', sans-serif;
+    color: #FFFFFF;
+}
+h2 {
+    font-family: 'Nunito', sans-serif;
+    color: #FFFFFF;
 }
 /* Added a font color of white for level 4 headers */
 h4 {
@@ -139,6 +145,10 @@ h4 {
 }
 ul {
     font-family: 'Nunito', sans-serif;
+}
+/* Added class form-group to update color to be visible against background */
+.form-group {
+    color: #FFFFFF;
 }
 .footer {
     position: absolute;
