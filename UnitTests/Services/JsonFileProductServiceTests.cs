@@ -52,12 +52,12 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
 
             // Get the First data item
-            var data = TestHelper.ProductService.GetAllData().First();
+            var data = TestHelper.ProductService.GetProducts().First();
             var countOriginal = data.Ratings.Length;
 
             // Act
             var result = TestHelper.ProductService.AddRating(data.Id, 5);
-            var dataNewList = TestHelper.ProductService.GetAllData().First();
+            var dataNewList = TestHelper.ProductService.GetProducts().First();
 
             // Assert
             Assert.AreEqual(true, result);
