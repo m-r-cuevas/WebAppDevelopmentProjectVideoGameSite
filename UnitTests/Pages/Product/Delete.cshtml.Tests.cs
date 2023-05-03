@@ -31,11 +31,11 @@ namespace UnitTests.Pages.Product.Delete
             // Arrange
 
             // Act
-            pageModel.OnGet("selinazawacki-shirt");
+            pageModel.OnGet("1");
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("Floppy Crop", pageModel.Product.Title);
+            Assert.AreEqual("Fifa", pageModel.Product.Name);
         }
         #endregion OnGet
 
@@ -47,8 +47,8 @@ namespace UnitTests.Pages.Product.Delete
 
             // First Create the product to delete
             pageModel.Product = TestHelper.ProductService.CreateData();
-            pageModel.Product.Title = "Example to Delete";
-            //TestHelper.ProductService.UpdateData(pageModel.Product);
+            pageModel.Product.Name = "Example to Delete";
+            TestHelper.ProductService.UpdateData(pageModel.Product);
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
@@ -68,10 +68,10 @@ namespace UnitTests.Pages.Product.Delete
             pageModel.Product = new ProductModel
             {
                 Id = "bogus",
-                Title = "bogus",
+                Name = "bogus",
                 Description = "bogus",
                 Url = "bogus",
-                Image = "bougs"
+                Image = "bogus"
             };
 
             // Force an invalid error state
