@@ -9,7 +9,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
 {
 
     /// <summary>
-    /// This is the CreateModel class page. This will allow users to create a new location.
+    /// This is the CreateModel class page.
     /// It is based on the UpdateModel class page.
     /// </summary>
     public class CreateModel : PageModel
@@ -17,10 +17,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         private ILogger<CreateModel> _logger;
 
 
-        //Create a JsonFileLocationService object called LocationService with a getter.
+        //Created a JsonFileLocationService object.
         public JsonFileProductService ProductService { get; }
 
-        //Initialize the LocationService object.
+        //Object ProductService created.
         public CreateModel(ILogger<CreateModel> logger, JsonFileProductService productService)
         {
             _logger = logger;
@@ -28,10 +28,10 @@ namespace ContosoCrafts.WebSite.Pages.Product
         }
         
 
-        //Create a LocationModel object called Location with a getter and setter.
+        //Created a ProductModel object with a getter and a setter.
         public ProductModel Product;
 
-        //When called, this method will create a new location and redirect the user to the Update page for that location which is why it looks similar to the UpdateModel class page.
+        //When called, this method will create a new product and redirects the user to the Update Page.
         public IActionResult OnGet()
         {
             Product = ProductService.CreateData();
