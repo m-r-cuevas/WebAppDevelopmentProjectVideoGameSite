@@ -15,9 +15,13 @@ namespace UnitTests.Pages.Product.Index
 
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// Tests whether index initializes correctly. 
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
+            // initialize new IndexModel
             pageModel = new IndexModel(TestHelper.ProductService)
             {
             };
@@ -25,11 +29,14 @@ namespace UnitTests.Pages.Product.Index
 
         #endregion TestSetup
 
+        /// <summary>
+        /// tests if valid products are return and if a list is properly created.
+        /// </summary>
         #region OnGet
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
-            // Arrange
+   
 
             // Act
             pageModel.OnGet();
