@@ -14,13 +14,9 @@ namespace UnitTests.Pages.Product.Delete
         #region TestSetup
         public static DeleteModel pageModel;
 
-        /// <summary>
-        /// Checks that the DeleteModel initializes properly.
-        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
-            // Initialize new DeleteModel
             pageModel = new DeleteModel(TestHelper.ProductService)
             {
             };
@@ -29,9 +25,6 @@ namespace UnitTests.Pages.Product.Delete
         #endregion TestSetup
 
         #region OnGet
-        /// <summary>
-        /// Tests whether the correct product is returned with the OnGet method.
-        /// </summary>
         [Test]
         public void OnGet_Valid_Should_Return_Products()
         {
@@ -47,9 +40,6 @@ namespace UnitTests.Pages.Product.Delete
         #endregion OnGet
 
         #region OnPostAsync
-        /// <summary>
-        /// Test the delete functionality by added a fake product and then removing it.
-        /// </summary>
         [Test]
         public void OnPostAsync_Valid_Should_Return_Products()
         {
@@ -71,9 +61,6 @@ namespace UnitTests.Pages.Product.Delete
             Assert.AreEqual(null, TestHelper.ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(pageModel.Product.Id)));
         }
 
-        /// <summary>
-        /// Checks that invalid states are caught.
-        /// </summary>
         [Test]
         public void OnPostAsync_InValid_Model_NotValid_Return_Page()
         {

@@ -19,9 +19,6 @@ namespace UnitTests.Pages.Product.AddRating
         #endregion TestSetup
 
         #region AddRating
-        /// <summary>
-        /// Tests whether an invalid product id returns false.
-        /// </summary>
         [Test]
         public void AddRating_InValid_Product_Null_Should_Return_False()
         {
@@ -34,7 +31,6 @@ namespace UnitTests.Pages.Product.AddRating
             // Assert
             Assert.AreEqual(false, result);
         }
-
 
         [Test]
         public void AddRating_InValid_()
