@@ -166,6 +166,10 @@ namespace ContosoCrafts.WebSite.Services
             return data;
         }
 
+        /// <summary>
+        /// Create data to add to the system
+        /// </summary>
+        /// <returns></returns>
         public ProductModel CreateData()
         {
 

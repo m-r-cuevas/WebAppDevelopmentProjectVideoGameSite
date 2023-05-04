@@ -5,6 +5,8 @@ using NUnit.Framework;
 using ContosoCrafts.WebSite.Pages.Product;
 using ContosoCrafts.WebSite.Models;
 using System.Linq;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
 namespace UnitTests.Pages.Product.AddRating
 {
     public class JsonFileProductServiceTests
@@ -33,19 +35,6 @@ namespace UnitTests.Pages.Product.AddRating
 
             // Assert
             Assert.AreEqual(false, result);
-        }
-
-
-        [Test]
-        public void AddRating_InValid_()
-        {
-            // Arrange
-
-            // Act
-            //var result = TestHelper.ProductService.AddRating(null, 1);
-
-            // Assert
-            //Assert.AreEqual(false, result);
         }
 
         /// <summary>
@@ -144,7 +133,24 @@ namespace UnitTests.Pages.Product.AddRating
             // Assert
             Assert.AreEqual(true, result);
         }
+        /// <summary>
+        /// Test whether null data passed to UpdateDate method returns null
+        /// </summary>
+        [Test]
+        public void AddRating_Valid_Product_Null_Data_Should_Return_True()
+        {
+            // Arrange
+            //var newEntry = TestHelper.ProductService.CreateData();
+            //var emptyProduct = TestHelper.ProductService.GetProducts().Last();
 
+            // Act
+            //var result = TestHelper.ProductService.UpdateData(emptyProduct);
+
+            
+
+            // Assert
+            //Assert.AreEqual(null, result);
+        }
         #endregion AddRating
 
     }
