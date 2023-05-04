@@ -21,18 +21,18 @@ namespace ContosoCrafts.WebSite.Pages.Product
         public JsonFileProductService ProductService { get; }
 
         //Object ProductService created.
-        public CreateModel(ILogger<CreateModel> logger, JsonFileProductService productService)
+
+        public CreateModel(JsonFileProductService productService)
         {
-            _logger = logger;
             ProductService = productService;
         }
-        
+
 
         //Created a ProductModel object with a getter and a setter.
         public ProductModel Product;
 
         //When called, this method will create a new product and redirects the user to the Update Page.
-        public IActionResult OnGet()
+        public IActionResult OnGet(string Id)
         {
             Product = ProductService.CreateData();
 
