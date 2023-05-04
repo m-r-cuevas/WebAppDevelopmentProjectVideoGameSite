@@ -9,7 +9,7 @@ namespace ContosoCrafts.WebSite.Pages.Product
 {
 
     /// <summary>
-    /// This is the CreateModel class page. This will allow users to create a new location.
+    /// This is the CreateModel class page.
     /// It is based on the UpdateModel class page.
     /// </summary>
     public class CreateModel : PageModel
