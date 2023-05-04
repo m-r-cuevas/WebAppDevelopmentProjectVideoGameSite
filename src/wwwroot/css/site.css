@@ -129,9 +129,8 @@ body {
 p {
     font-family: 'Nunito', sans-serif;
 }
-/* Update color for level 1 headers to show on dark background*/
-h1 {
-    font-family: 'Nunito', sans-serif;
+/*Added styling for Privacy Text*/
+.privacy-text {
     color: #FFFFFF;
 }
 h2 {
