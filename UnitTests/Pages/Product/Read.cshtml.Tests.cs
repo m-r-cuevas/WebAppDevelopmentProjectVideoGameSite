@@ -45,7 +45,7 @@ namespace UnitTests.Pages.Product.Read
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(0, ratings);
+            Assert.AreEqual(5, ratings);
         }
         #endregion OnGet
     }

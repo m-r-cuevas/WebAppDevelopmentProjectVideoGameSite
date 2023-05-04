@@ -7,7 +7,10 @@
     "Url": "https://images4.alphacoders.com/843/843785.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
-    "Ratings": null
+    "Ratings": [
+      5,
+      5
+    ]
   },
   {
     "Id": "2",
