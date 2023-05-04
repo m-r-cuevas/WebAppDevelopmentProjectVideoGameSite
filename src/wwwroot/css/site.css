@@ -133,6 +133,9 @@ p {
 .privacy-text {
     color: #FFFFFF;
 }
+h1 {
+    color: black;
+}
 h2 {
     font-family: 'Nunito', sans-serif;
     color: #FFFFFF;
