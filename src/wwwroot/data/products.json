@@ -91,15 +91,5 @@
     "Title": "Edit here",
     "Description": "Coming Soon",
     "Ratings": null
-  },
-  {
-    "Id": "91",
-    "Name": "Enter the name of the location.",
-    "Maker": null,
-    "img": "Enter the image url for the location.",
-    "Url": null,
-    "Title": "Enter a title for the location.",
-    "Description": "Enter a description for the location.",
-    "Ratings": null
   }
 ]
