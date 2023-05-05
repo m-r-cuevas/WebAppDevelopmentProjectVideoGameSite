@@ -3,10 +3,10 @@
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using ConsoleCafe.WebSite.Models;
+using ConsoleCafe.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages
+namespace ConsoleCafe.WebSite.Pages
 {
     /// <summary>
     /// The IndexModel is the page model for the home page of the Contoso Crafts website.
