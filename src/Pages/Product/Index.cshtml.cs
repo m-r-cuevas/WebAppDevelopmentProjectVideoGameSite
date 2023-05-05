@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using ConsoleCafe.WebSite.Models;
+using ConsoleCafe.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ConsoleCafe.WebSite.Pages.Product
 {
     public class IndexModel : PageModel
     {
