@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 // Adding comment for Git Lab : Maria
-namespace ContosoCrafts.WebSite.Pages
+namespace ConsoleCafe.WebSite.Pages
 {
     /// <summary>
     /// Error Page class
