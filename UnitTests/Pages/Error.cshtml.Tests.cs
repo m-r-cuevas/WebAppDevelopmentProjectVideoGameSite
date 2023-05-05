@@ -6,7 +6,7 @@ using NUnit.Framework;
 
 using Moq;
 
-using ContosoCrafts.WebSite.Pages;
+using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
 {
