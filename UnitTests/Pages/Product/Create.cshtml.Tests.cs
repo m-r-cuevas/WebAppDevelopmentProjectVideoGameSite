@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using ContosoCrafts.WebSite.Pages.Product;
+using ConsoleCafe.WebSite.Pages.Product;
 
 namespace UnitTests.Pages.Product.Create
 {
