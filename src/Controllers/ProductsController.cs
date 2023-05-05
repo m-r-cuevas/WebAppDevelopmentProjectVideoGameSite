@@ -2,10 +2,10 @@ using System.Collections.Generic;
 
 using Microsoft.AspNetCore.Mvc;
 
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using ConsoleCafe.WebSite.Models;
+using ConsoleCafe.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Controllers
+namespace ConsoleCafe.WebSite.Controllers
 {
     /// <summary>
     /// ProductsController
