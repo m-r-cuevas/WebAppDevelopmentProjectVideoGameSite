@@ -2,8 +2,8 @@
 
 using NUnit.Framework;
 
-using ContosoCrafts.WebSite.Pages.Product;
-using ContosoCrafts.WebSite.Models;
+using ConsoleCafe.WebSite.Pages.Product;
+using ConsoleCafe.WebSite.Models;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
