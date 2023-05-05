@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using ContosoCrafts.WebSite.Pages.Product;
+using ConsoleCafe.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages.Product.Update
@@ -56,7 +56,7 @@ namespace UnitTests.Pages.Product.Update
         public void OnPost_ValidID_Should_Return_ValidProduct()
         {
             // Arrange
-            pageModel.Product = new ContosoCrafts.WebSite.Models.ProductModel
+            pageModel.Product = new ConsoleCafe.WebSite.Models.ProductModel
             {
                 Id = "9",
                 Title = "testing",
