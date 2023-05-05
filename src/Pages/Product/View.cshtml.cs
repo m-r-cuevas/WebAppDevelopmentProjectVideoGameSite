@@ -1,9 +1,9 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using ContosoCrafts.WebSite.Models;
-using ContosoCrafts.WebSite.Services;
+using ConsoleCafe.WebSite.Models;
+using ConsoleCafe.WebSite.Services;
 
-namespace ContosoCrafts.WebSite.Pages.Product
+namespace ConsoleCafe.WebSite.Pages.Product
 {
     public class ViewModel : PageModel
     {
