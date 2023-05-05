@@ -1,6 +1,6 @@
 {
   "profiles": {
-    "ContosoCrafts.WebSite": {
+    "ConsoleCafe.WebSite": {
       "commandName": "Project",
       "launchBrowser": true,
       "environmentVariables": {
