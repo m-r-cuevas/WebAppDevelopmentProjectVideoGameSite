@@ -17,7 +17,7 @@ namespace ConsoleCafe.WebSite.Pages.Product
         private ILogger<CreateModel> _logger;
 
 
-        //Created a JsonFileLocationService object.
+        //Created a JsonFileProductService object.
         public JsonFileProductService ProductService { get; }
 
         //Object ProductService created.
@@ -32,11 +32,11 @@ namespace ConsoleCafe.WebSite.Pages.Product
         public ProductModel Product;
 
         //When called, this method will create a new product and redirects the user to the Update Page.
-        public IActionResult OnGet(string Id)
+        public IActionResult OnGet()
         {
             Product = ProductService.CreateData();
 
-            return RedirectToPage("./Update", new { Id = Product.Id });
+            return RedirectToPage("./Update", new { Id = "temp" });
         }
     }
 }
