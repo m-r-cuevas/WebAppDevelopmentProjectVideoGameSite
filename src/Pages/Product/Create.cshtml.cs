@@ -21,12 +21,10 @@ namespace ConsoleCafe.WebSite.Pages.Product
         public JsonFileProductService ProductService { get; }
 
         //Object ProductService created.
-
         public CreateModel(JsonFileProductService productService)
         {
             ProductService = productService;
         }
-
 
         //Created a ProductModel object with a getter and a setter.
         public ProductModel Product;
@@ -34,8 +32,6 @@ namespace ConsoleCafe.WebSite.Pages.Product
         //When called, this method will create a new product and redirects the user to the Update Page.
         public IActionResult OnGet()
         {
-            Product = ProductService.CreateData();
-
             return RedirectToPage("./Update", new { Id = "temp" });
         }
     }
