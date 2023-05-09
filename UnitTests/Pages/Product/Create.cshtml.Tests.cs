@@ -29,11 +29,11 @@ namespace UnitTests.Pages.Product.Create
 			// Act
             // Since the id is a string, for every new card that is created 1 is concatenated
             // to the id. which is why the new product should be 91 since the last productId is 9
-			pageModel.OnGet("91");
+			pageModel.OnGet();
 
 			// Assert
 			Assert.AreEqual(true, pageModel.ModelState.IsValid);
-			Assert.AreEqual(pageModel.Product.Id, "91");
+			Assert.AreEqual(pageModel.Product.Id, "10");
 
 		}
 		#endregion OnGet
