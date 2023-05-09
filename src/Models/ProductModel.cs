@@ -9,24 +9,29 @@ namespace ConsoleCafe.WebSite.Models
     /// </summary>
     public class ProductModel
     {
-        public string Id { get; set; }           //String Id of the product.
-        // Added a property called "Name" -Ravi.
-        public string Name { get; set; }         //String Name of the product.
-        public string Maker { get; set; }        //String Maker of the product.
+        //String Id of the product.
+        public string Id { get; set; }           
+        // Added a property called "Name".
+        public string Name { get; set; }
+        //String Maker of the product.
+        public string Maker { get; set; }        
         
         [JsonPropertyName("img")]
-        public string Image { get; set; }        //Image of the product.
-        public string Url { get; set; }          //String Url of the image of the product.
-        public string Title { get; set; }        //String Title of the product.
-        public string Description { get; set; }  //String Description of the product.
-        public int[] Ratings { get; set; }       //Integer array of ratings of the product.
+        //Image of the product.
+        public string Image { get; set; }
+        //String Url of the image of the product.
+        public string Url { get; set; }
+        //String Title of the product.
+        public string Title { get; set; }
+        //String Description of the product.
+        public string Description { get; set; }
+        //Integer array of ratings of the product.
+        public int[] Ratings { get; set; }       
 
         /// <summary>
         /// Returns string representation of product object.
         /// </summary>
         /// <returns></returns>
         public override string ToString() => JsonSerializer.Serialize<ProductModel>(this);
-
- 
     }
 }
