@@ -7,25 +7,31 @@
     ViewData["Title"] = "Update page";
 }
 
-<h1 class="privacy-text">Update</h1>
-
 <div class="container content-container">
+    @if (Model.ModelId == "temp")
+    {
+        <h1 class="privacy-text">Create</h1>
+    }
+    else
+    {
+        <h1 class="privacy-text">Update</h1>
+    }
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(x => x.Product.Id)
-        
-        <!--Added Id in Update for testing, will be removed -->
-        <div class="form-group">
-            <label asp-for="Product.Id" class="control-label"></label>
-            <input asp-for="Product.Id" class="form-control" />
-            <span asp-validation-for="Product.Id" class="text-danger"></span>
-        </div>
-
+       
         <!--Update page displays product name, description and Image URL-->
         <div class="form-group">
             <label asp-for="Product.Name" class="control-label"></label>
             <input asp-for="Product.Name" class="form-control" />
             <span asp-validation-for="Product.Name" class="text-danger"></span>
+        </div>
+
+        <!--Added Maker in Update for testing, will be removed -->
+        <div class="form-group">
+            <label asp-for="Product.Maker" class="control-label"></label>
+            <input asp-for="Product.Maker" class="form-control" />
+            <span asp-validation-for="Product.Maker" class="text-danger"></span>
         </div>
         
 
