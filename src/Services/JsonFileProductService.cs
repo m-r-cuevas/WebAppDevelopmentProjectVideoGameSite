@@ -171,34 +171,26 @@ namespace ConsoleCafe.WebSite.Services
         /// Create data to add to the system
         /// </summary>
         /// <returns></returns>
-        public ProductModel CreateData()
+        public ProductModel CreateData(ProductModel product)
         {
             //Fetching the Id number of the last product and incrementing by one.
             var lastId = int.Parse(GetProducts().Last().Id);
             var newId = (lastId + 1).ToString();
 
-            //Create a new data entry
-            var data = new ProductModel()
-            {
-                //Assigning the Id variable with the incremented one.
-                Id = newId,
-                Name = "Enter the name of the game.",
-                Maker = "Enter the name of the maker.",
-                Description = "Enter a description for the game.",
-                Image = "Enter the image url for the game.",
-            };
+            //Assinging the Id to the incremented one.
+            product.Id= newId;
 
-            // Retrieve the data from the json file
+            // Retrieves the data from the json file
             var dataSet = GetProducts();
 
             //Add the new data to the end of the list
-            var newDataSet = dataSet.Append(data);
+            var newDataSet = dataSet.Append(product);
 
             //Save the new data to the json file
             SaveData(newDataSet);
 
-            //Return the data entry that was just created
-            return data;
+            //Returns the data entry that was just created
+            return product;
         }
     }
 }
