@@ -1,11 +1,13 @@
 using NUnit.Framework;
 using ConsoleCafe.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Moq;
 
 namespace UnitTests.Pages.Product.Update
 {
     /// <summary>
-    /// Unit test for Lend page
+    /// Unit test for Update page
     /// </summary>
     public class UpdateTests
     {
@@ -18,9 +20,11 @@ namespace UnitTests.Pages.Product.Update
         [SetUp]
         public void TestInitialize()
         {
-            pageModel = new UpdateModel(TestHelper.ProductService)
-        {
-        };
+            var MockLoggerDirect = Mock.Of<ILogger<UpdateModel>>();
+
+            pageModel = new UpdateModel(MockLoggerDirect, TestHelper.ProductService)
+            {
+            };
     }
 
         #endregion TestSetup
