@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -172,16 +173,19 @@ namespace ConsoleCafe.WebSite.Services
         /// <returns></returns>
         public ProductModel CreateData()
         {
+            //Fetching the Id number of the last product and incrementing by one.
+            var lastId = int.Parse(GetProducts().Last().Id);
+            var newId = (lastId + 1).ToString();
 
             //Create a new data entry
             var data = new ProductModel()
             {
-                //Get the last id and add 1 to it
-                Id = (GetProducts().Last().Id + 1).ToString(),
-                Name = "Enter the name of the location.",
-                Title = "Enter a title for the location.",
-                Description = "Enter a description for the location.",
-                Image = "Enter the image url for the location.",
+                //Assigning the Id variable with the incremented one.
+                Id = newId,
+                Name = "Enter the name of the game.",
+                Maker = "Enter the name of the maker.",
+                Description = "Enter a description for the game.",
+                Image = "Enter the image url for the game.",
             };
 
             // Retrieve the data from the json file
