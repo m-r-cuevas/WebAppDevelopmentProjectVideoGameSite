@@ -5,29 +5,85 @@
 <!-- Injected Navigation Manager so we could navigate between pages or components -Ravi. -->
 @inject NavigationManager NavManager
 
-<div class="card-columns">
-@foreach (var product in ProductService.GetProducts())
-{
-    <div class="card">
-        <div class="card-img" style="background-image: url('@product.Image');">
-        </div>
-        <div class="card-body">
-            <!-- Updated cards to be displayed by "Name" instead of "Title". -Ravi-->
-            <h5 class="card-title">@product.Name</h5>
-        </div>
-        <div class="card-footer">
-            <!-- Updated button name to "View More".-Maria -->
-            <small class="text-muted">
-                <!-- Using navigation updated the onclick funtionality to respective destination -Ravi. -->
-            <button @onclick="(e => MovetoView(product.Id))" id="ViewMoreButton_@product.Id" class="btn btn-primary">View More</button>
-            </small>
-            <!-- Added right aligned download button. Still directs to product info. -Maria -->
-            <small class="text-muted float-right"><button @onclick="(e => SelectProduct(product.Id))" 
-              data-toggle="modal" data-target="#productModal" class="btn btn-primary">Download</button>
-            </small>
+<!-- Add drop down menu for game type filtering. No functionality yet!-->
+<div>
+    <div class="row">
+        <div class="col">
+            <label class="filter-label">Select a game type to filter by type: </label>
+            <select asp-for="ProductTypeEnum" asp-items="Html.GetEnumSelectList<ProductType>()">
+                <option value="">Select game type</option>
+                <option value="1">FPS</option>
+                <option value="2">Racing</option>
+                <option value="3">Sports</option>
+            </select>
         </div>
     </div>
-}
+</div>
+
+<!-- Collect input of game name from user to search -->
+<div>
+    <div class="row">
+        <div class="col">
+            <label class="filter-label">Enter a game name to search: </label>
+            <input type="text" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" />
+            <button @onclick="(e => EnableFilterData())" class="btn-filter">Filter</button>
+            <button @onclick="(e => ClearFilterData())" class="btn-filter">Clear</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- Container to display filtered (or not) games -->
+<div class="container-fluid">
+    @{
+        var productList = ProductService.GetProducts();
+
+        /*
+        Allows searching by name of game 
+        if filter enabled, filter for string entered
+        if not display all tiles
+        */
+
+        if (FilterData)
+        {
+            productList = productList.Where(m => m.Name.Contains(FilterDataString));
+        }
+
+        if (productList.Any())
+        {
+            <hr />
+            <div class="row">
+                <div class="card-columns">
+                    @foreach (var product in productList)
+                    {
+                        <div class="card">
+                            <div class="card-img" style="background-image: url('@product.Image');">
+                            </div>
+                            <div class="card-body">
+                                <!-- Updated cards to be displayed by "Name" instead of "Title". -Ravi-->
+                                <h5 class="card-title">@product.Name</h5>
+                            </div>
+                            <div class="card-footer">
+                                <!-- Updated button name to "View More".-Maria -->
+                                <small class="text-muted">
+                                    <!-- Using navigation updated the onclick funtionality to respective destination -Ravi. -->
+                                    <button @onclick="(e => MovetoView(product.Id))" id="ViewMoreButton_@product.Id" class="btn btn-primary">View More</button>
+                                </small>
+                                <!-- Added right aligned download button. Still directs to product info. -Maria -->
+                                <small class="text-muted float-right">
+                                    <button @onclick="(e => SelectProduct(product.Id))"
+                                data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                                        Download
+                                    </button>
+                                </small>
+                            </div>
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+    }
 </div>
 
 <!--Page responsive popup code that displays that a button was clicked -Srikanth -->
@@ -146,6 +202,30 @@
     void MovetoView(string id)
     {
         NavManager.NavigateTo("../Product/View/" + id, true);
+    }
+
+    // Methods for needed for filtering
+
+    string FilterDataString = "";
+    bool FilterData = false;
+
+
+    void UpdateFilterText(string text)
+    {
+    // set string holding name to text input from user
+    FilterDataString = text;
+    }
+
+    void EnableFilterData()
+    {
+       // If the Filter is enabled, set the filter flag
+        FilterData = true;
+    }
+
+    void ClearFilterData()
+    {
+        // If the Filter is enabled, set the filter flag
+        FilterData = false;
     }
 }
 
