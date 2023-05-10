@@ -25,6 +25,8 @@ namespace ConsoleCafe.WebSite.Models
         public string Title { get; set; }
         //String Description of the product.
         public string Description { get; set; }
+        // Enum product type
+        public ProductTypeEnum ProductType { get; set; } = ProductTypeEnum.Undefined;  
         //Integer array of ratings of the product.
         public int[] Ratings { get; set; }       
 
