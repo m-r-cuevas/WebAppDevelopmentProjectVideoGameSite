@@ -74,6 +74,19 @@ a {
     border-color: #e9a8a6;
 }
 
+/* Add class for filter labels on home page */
+.filter-label {
+    color: #FFFFFF;
+}
+
+.btn-filter {
+    background-color: #FFFFFF;
+}
+.btn-filter:hover {
+    background-color: darkorange;
+    border-color: darkorange;
+}
+
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
   color: #fff;
   background-color: #1b6ec2;
