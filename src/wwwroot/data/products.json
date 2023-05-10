@@ -7,6 +7,7 @@
     "Url": "https://images4.alphacoders.com/843/843785.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 3,
     "Ratings": [
       5,
       5
@@ -20,6 +21,7 @@
     "Url": "https://images.alphacoders.com/716/716163.png?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 1,
     "Ratings": null
   },
   {
@@ -30,6 +32,7 @@
     "Url": "https://images4.alphacoders.com/119/1199740.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 1,
     "Ratings": null
   },
   {
@@ -40,6 +43,7 @@
     "Url": "https://images.alphacoders.com/128/1282982.jpg?dl=1",
     "Title": "A 5v5 character based tactical shooter game.",
     "Description": "Coming Soon",
+    "ProductType": 1,
     "Ratings": null
   },
   {
@@ -50,6 +54,7 @@
     "Url": "https://images2.alphacoders.com/653/653476.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 3,
     "Ratings": null
   },
   {
@@ -60,6 +65,7 @@
     "Url": "https://images7.alphacoders.com/109/1097466.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 1,
     "Ratings": null
   },
   {
@@ -70,6 +76,7 @@
     "Url": "https://images7.alphacoders.com/439/439636.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 2,
     "Ratings": null
   },
   {
@@ -80,6 +87,7 @@
     "Url": "https://images6.alphacoders.com/374/374327.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 2,
     "Ratings": null
   },
   {
@@ -90,6 +98,29 @@
     "Url": "https://images3.alphacoders.com/953/953930.jpg?dl=1",
     "Title": "Edit here",
     "Description": "Coming Soon",
+    "ProductType": 0,
+    "Ratings": null
+  },
+  {
+    "Id": "10",
+    "Name": "Enter the name of the game.",
+    "Maker": "Enter the name of the maker.",
+    "img": "Enter the image url for the game.",
+    "Url": null,
+    "Title": null,
+    "Description": "Enter a description for the game.",
+    "ProductType": 1,
+    "Ratings": null
+  },
+  {
+    "Id": "11",
+    "Name": "Enter the name of the game.",
+    "Maker": "Enter the name of the maker.",
+    "img": "Enter the image url for the game.",
+    "Url": null,
+    "Title": null,
+    "Description": "Enter a description for the game.",
+    "ProductType": 0,
     "Ratings": null
   }
 ]
