@@ -73,16 +73,16 @@
                             <div class="card-img" style="background-image: url('@product.Image');">
                             </div>
                             <div class="card-body">
-                                <!-- Updated cards to be displayed by "Name" instead of "Title". -Ravi-->
+                                <!-- Updated cards to be displayed by "Name" instead of "Title". -->
                                 <h5 class="card-title">@product.Name</h5>
                             </div>
                             <div class="card-footer">
-                                <!-- Updated button name to "View More".-Maria -->
+                                <!-- Updated button name to "View More". -->
                                 <small class="text-muted">
-                                    <!-- Using navigation updated the onclick funtionality to respective destination -Ravi. -->
+                                    <!-- Using navigation updated the onclick funtionality to respective destination  -->
                                     <button @onclick="(e => MovetoView(product.Id))" id="ViewMoreButton_@product.Id" class="btn btn-primary">View More</button>
                                 </small>
-                                <!-- Added right aligned download button. Still directs to product info. -Maria -->
+                                <!-- Added right aligned download button. Still directs to product info.  -->
                                 <small class="text-muted float-right">
                                     <button @onclick="(e => SelectProduct(product.Id))"
                                         data-toggle="modal" data-target="#productModal" class="btn btn-primary">
@@ -99,7 +99,7 @@
     }
 </div>
 
-<!--Page responsive popup code that displays that a button was clicked -Srikanth -->
+<!--Page responsive popup code that displays that a button was clicked  -->
 @if(selectedProduct != null)
 {
  <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
@@ -120,7 +120,7 @@
     </div>
 </div>
 }
-<!--Commented the part of code unnecessary for this sprint -Srikanth -->
+<!--Commented the part of code unnecessary for this sprint  -->
 @*
 @if(selectedProduct == null)
 {
