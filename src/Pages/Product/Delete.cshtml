@@ -9,34 +9,14 @@
 
 <h1>Delete</h1>
 
-<div class="container">
+<!-- Cosmetic changes made to the delete page but bug prevents deleting games
+without form present and all fields filled with valid data. -->
+<div class="content-bgcolor">
+    <h1>Are you sure you want to delete this game:</h1>
+    <h3 class="title" id="productTitle">@Model.Product.Name</h3>
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(x => x.Product.Id)
-        <!-- For adding a Title, Description, ImageUrl-->
-        <div class="form-group">
-            <label asp-for="Product.Title" class="control-label"></label>
-            <input asp-for="Product.Title" class="form-control" />
-            <span asp-validation-for="Product.Title" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Product.Description" class="control-label"></label>
-            <input asp-for="Product.Description" class="form-control" />
-            <span asp-validation-for="Product.Description" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Product.Url" class="control-label"></label>
-            <input asp-for="Product.Url" class="form-control" />
-            <span asp-validation-for="Product.Url" class="text-danger"></span>
-        </div>
-
-        <div class="form-group">
-            <label asp-for="Product.Image" class="control-label"></label>
-            <input asp-for="Product.Image" class="form-control" />
-            <span asp-validation-for="Product.Image" class="text-danger"></span>
-        </div>
 
         <h1>Confirm Delete of this item</h1>
         <div class="form-group">
