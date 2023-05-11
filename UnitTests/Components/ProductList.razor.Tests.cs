@@ -5,6 +5,7 @@ using ConsoleCafe.WebSite.Components;
 using Microsoft.Extensions.DependencyInjection;
 using ConsoleCafe.WebSite.Services;
 using System.Linq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UnitTests.Components
 {
@@ -61,6 +62,90 @@ namespace UnitTests.Components
             Assert.AreEqual(true, pageMarkup.Contains("Fifa"));
         }
         #endregion SelectProduct
+
+        /* test for UpdateFilter() */
+        #region UpdateFilterText
+        [Test]
+        public void Update_Filter_Text_Valid_Should_Return_True()
+        {
+            //Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var testText = "Testing Filter text";
+
+            var page = RenderComponent<ProductList>();
+
+            var filterList = page.FindAll("Input");
+
+            var filter = filterList.First();
+
+            // Act
+            filter.Change(testText);
+
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains($"{testText}"));
+
+        }
+        #endregion UpdateFilterText
+
+
+        /* test for EnableFilterData() */
+        #region EnableFilterData
+        [Test]
+        public void Enable_Filter_Data_Set_to_True_Should_Return_True()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var filterButton = "Filter";
+
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(filterButton));
+
+            // Act
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, true);
+        }
+        #endregion EnableFilterData
+
+        /* test for ClearFilterData() */
+        #region ClearFilterData
+        [Test]
+        public void Clear_Filter_Data_Set_to_False_Should_Return_False()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var clearButton = "Clear";
+
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(clearButton));
+
+            // Act
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(false, false);
+        }
+        #endregion ClearFilterData
+
         /* Comment out SubmitRating tests which are currently unecessary
         #region SubmitRating
 
