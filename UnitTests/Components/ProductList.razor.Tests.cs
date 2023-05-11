@@ -68,17 +68,21 @@ namespace UnitTests.Components
         [Test]
         public void Update_Filter_Text_Valid_Should_Return_True()
         {
-            //Arrange
+            // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            // Set up testing text
             var testText = "Testing Filter text";
 
             var page = RenderComponent<ProductList>();
 
+            // Find input all fields
             var filterList = page.FindAll("Input");
 
+            // First field should be name filter
             var filter = filterList.First();
 
             // Act
+            // trigger onchange event using the test text
             filter.Change(testText);
 
             var pageMarkup = page.Markup;
@@ -101,10 +105,10 @@ namespace UnitTests.Components
 
             var page = RenderComponent<ProductList>();
 
-            // Find the Buttons (more info)
+            // Find the Buttons (filter)
             var buttonList = page.FindAll("Button");
 
-            // Find the one that matches the ID looking for and click it
+            // Find the one that matches the button name looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains(filterButton));
 
             // Act
@@ -129,10 +133,10 @@ namespace UnitTests.Components
 
             var page = RenderComponent<ProductList>();
 
-            // Find the Buttons (more info)
+            // Find the Buttons (Clear)
             var buttonList = page.FindAll("Button");
 
-            // Find the one that matches the ID looking for and click it
+            // Find the one that matches the button name looking for and click it
             var button = buttonList.First(m => m.OuterHtml.Contains(clearButton));
 
             // Act
