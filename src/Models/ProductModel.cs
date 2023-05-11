@@ -12,8 +12,7 @@ namespace ConsoleCafe.WebSite.Models
     {
         //Required attribute is to specify that a property is required.
 
-        //Id of the game is required.
-        [Required(ErrorMessage = "Id field is required.")]
+        //No validation because this field isn't being displayed
         public string Id { get; set; }
 
         //Name of the game is required.
