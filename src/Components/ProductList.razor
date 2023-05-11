@@ -57,8 +57,7 @@
 
         if (FilterData)
         {
-            
-            productList = productList.Where(m => m.Name.Contains(FilterDataString));
+            productList = productList.Where(m => m.Name.ToLower().Contains(FilterDataString.ToLower()));
 
         }
 
