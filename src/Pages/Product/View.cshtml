@@ -18,7 +18,7 @@
 
     <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
 
-
+    <!-- Create a table to display every property of the Product class-->
     <table class="table table-bordered table-striped content-container">
         <thead>
             <tr>
@@ -34,6 +34,8 @@
     {
             <tr>
                 <td>@property.Name</td>
+                <!-- if the property is the Rating property, display the average of the ratings, otherwise display the value of the property-->
+                <!--Call the GetAverageRating in the ReadModel class to get the average of the ratings-->
                 <td>@(property.Name == "Ratings" ? Model.GetAverageRating(Model.Product.Id) : property.GetValue(Model.Product))</td>
 
             </tr>
