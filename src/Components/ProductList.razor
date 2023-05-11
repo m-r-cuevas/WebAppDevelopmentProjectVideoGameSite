@@ -10,12 +10,18 @@
     <div class="row">
         <div class="col">
             <label class="filter-label">Select a game type to filter by type: </label>
-            <select asp-for="ProductTypeEnum" asp-items="Html.GetEnumSelectList<ProductType>()">
+            <!--<select asp-for="ProductType" asp-items="Html.GetEnumSelectList<Models.ProductTypeEnum>()"> -->
+            <select id="GameType" name="GameType">
+                <!-- Hard code options for now (can't get enum ProductType linked properly) -->
                 <option value="">Select game type</option>
                 <option value="1">FPS</option>
                 <option value="2">Racing</option>
                 <option value="3">Sports</option>
             </select>
+            
+            <button @onclick="(e => EnableFilterType())" class="btn-filter">Filter</button>
+            <button @onclick="(e => ClearFilterType())" class="btn-filter">Clear</button>
+            
         </div>
     </div>
 </div>
@@ -44,9 +50,16 @@
         if not display all tiles
         */
 
+        if (FilterType)
+        {
+            /*productList = productList.Where(m => m.ProductType.Equals(typeFilter));*/
+        }
+
         if (FilterData)
         {
+            
             productList = productList.Where(m => m.Name.Contains(FilterDataString));
+
         }
 
         if (productList.Any())
@@ -166,9 +179,9 @@
 
     void SelectProduct(string productId)
     {
-      selectedProductId = productId;
-      selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
-      GetCurrentRating();
+        selectedProductId = productId;
+        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
+        GetCurrentRating();
     }
 
     int currentRating = 0;
@@ -177,26 +190,26 @@
 
     void GetCurrentRating()
     {
-      if(selectedProduct.Ratings == null)
-      {
-        currentRating = 0;
-        voteCount = 0;
-      }
-      else
-      {
-        voteCount = selectedProduct.Ratings.Count();
-        voteLabel = voteCount > 1 ? "Votes" : "Vote";
-        currentRating = selectedProduct.Ratings.Sum() / voteCount;
-      }
+        if(selectedProduct.Ratings == null)
+        {
+            currentRating = 0;
+            voteCount = 0;
+        }
+        else
+        {
+            voteCount = selectedProduct.Ratings.Count();
+            voteLabel = voteCount > 1 ? "Votes" : "Vote";
+            currentRating = selectedProduct.Ratings.Sum() / voteCount;
+        }
 
-      System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
+        System.Console.WriteLine($"Current rating for {selectedProduct.Id}: {currentRating}");
     }
 
     void SubmitRating(int rating)
     {
-      System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
-      ProductService.AddRating(selectedProductId, rating);
-      SelectProduct(selectedProductId);
+        System.Console.WriteLine($"Rating received for {selectedProduct.Id}: {rating}");
+        ProductService.AddRating(selectedProductId, rating);
+        SelectProduct(selectedProductId);
     }
     // Defining a function and setting the path for the nav manager. -Ravi.
     void MovetoView(string id)
@@ -218,7 +231,7 @@
 
     void EnableFilterData()
     {
-       // If the Filter is enabled, set the filter flag
+        // If the Filter is enabled, set the filter flag
         FilterData = true;
     }
 
@@ -227,5 +240,21 @@
         // If the Filter is enabled, set the filter flag
         FilterData = false;
     }
+
+    bool FilterType = false;
+
+    void EnableFilterType()
+    {
+        // If the Filter is enabled, set the filter flag
+        FilterType = true;
+    }
+
+    void ClearFilterType()
+    {
+        // If the Filter is enabled, set the filter flag
+        FilterType = false;
+    }
+
+
 }
 
