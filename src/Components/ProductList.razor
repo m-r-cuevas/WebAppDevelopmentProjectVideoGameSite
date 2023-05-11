@@ -72,7 +72,7 @@
                                 <!-- Added right aligned download button. Still directs to product info. -Maria -->
                                 <small class="text-muted float-right">
                                     <button @onclick="(e => SelectProduct(product.Id))"
-                                data-toggle="modal" data-target="#productModal" class="btn btn-primary">
+                                        data-toggle="modal" data-target="#productModal" class="btn btn-primary">
                                         Download
                                     </button>
                                 </small>
@@ -212,8 +212,8 @@
 
     void UpdateFilterText(string text)
     {
-    // set string holding name to text input from user
-    FilterDataString = text;
+        // set string holding name to text input from user
+        FilterDataString = text;
     }
 
     void EnableFilterData()
