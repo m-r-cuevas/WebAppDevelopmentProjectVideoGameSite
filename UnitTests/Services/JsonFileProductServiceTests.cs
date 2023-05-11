@@ -20,6 +20,63 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion TestSetup
 
+        #region UpdateData
+
+        /// <summary>
+        /// Tests whether the UpdateData method returns null when provided with a null ProductData object
+        /// </summary>
+        [Test]
+        public void UpdateData_ProductData_IsNull()
+        {
+            // Arrange
+            var product = new ProductModel();
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(product);
+
+            // Assert
+            Assert.IsNull(result);
+        }
+
+        /// <summary>
+        /// Tests whether the UpdateData method returns a UpdateData object when provided with a valid ProductData object
+        /// </summary>
+        [Test]
+        public void UpdateData_ProductData_IsNotNull_Return_ProductData()
+        {
+            // Arrange
+            var product = TestHelper.ProductService.GetProducts().First();
+
+            product.Name = "Fifa";
+
+            // Act
+            var result = TestHelper.ProductService.UpdateData(product);
+
+            // Assert
+            Assert.AreEqual(product.Name, result.Name);
+        }
+
+        #endregion UpdateData
+
+        #region DeleteProduct
+
+        /// <summary>
+        /// Tests whether the method deletes a product and returns the deleted product.
+        /// </summary>
+        [Test]
+        public void DeleteProduct_ProductExists_ProductDeleted()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetProducts().First();
+
+            // Act
+            var result = TestHelper.ProductService.DeleteData(data.Id);
+
+            // Assert
+            Assert.AreEqual(data.Id, result.Id);
+        }
+        #endregion DeleteProduct
+
         #region AddRating
         /// <summary>
         /// Tests whether an invalid product id returns false.
