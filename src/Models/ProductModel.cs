@@ -24,11 +24,11 @@ namespace ConsoleCafe.WebSite.Models
         //Maker of the game is required.
         [Required(ErrorMessage = "Maker is required")]
         [StringLength(100, MinimumLength = 1, ErrorMessage = "100 character limit.")]
-        public string Maker { get; set; }        
-        
+        public string Maker { get; set; }
+
         //Image of the game is required.
+        [Required(ErrorMessage = "Image URL is required")]
         [JsonPropertyName("img")]
-        [Url]
         public string Image { get; set; }
 
         //String Url of the game.
