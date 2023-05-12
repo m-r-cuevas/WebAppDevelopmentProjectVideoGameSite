@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 namespace ConsoleCafe.WebSite.Pages
 {
     /// <summary>
-    /// The DownloadModel is the page model for the download page of the Contoso Crafts website.
+    /// The DownloadModel is the page model for the download page of the Console Cafe website.
     /// </summary>
     public class DownloadModel : PageModel
     {
