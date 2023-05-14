@@ -100,27 +100,5 @@
     "Description": "Coming Soon",
     "ProductType": 0,
     "Ratings": null
-  },
-  {
-    "Id": "10",
-    "Name": "Enter the name of the game.",
-    "Maker": "Enter the name of the maker.",
-    "img": "Enter the image url for the game.",
-    "Url": null,
-    "Title": null,
-    "Description": "Enter a description for the game.",
-    "ProductType": 1,
-    "Ratings": null
-  },
-  {
-    "Id": "11",
-    "Name": "Enter the name of the game.",
-    "Maker": "Enter the name of the maker.",
-    "img": "Enter the image url for the game.",
-    "Url": null,
-    "Title": null,
-    "Description": "Enter a description for the game.",
-    "ProductType": 0,
-    "Ratings": null
   }
 ]

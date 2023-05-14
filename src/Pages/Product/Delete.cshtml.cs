@@ -49,11 +49,15 @@ namespace ConsoleCafe.WebSite.Pages.Product
         /// <returns></returns>
         public IActionResult OnPost()
         {
+            
+             // Somthing wrong with checking for valid model state
+             
             if (!ModelState.IsValid)
             {
                 return Page();
             }
-
+             
+            
             ProductService.DeleteData(Product.Id);
 
             return RedirectToPage("./Index");

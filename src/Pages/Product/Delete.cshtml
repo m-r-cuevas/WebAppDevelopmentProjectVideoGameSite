@@ -11,12 +11,12 @@
 
 <!-- Cosmetic changes made to the delete page but bug prevents deleting games
 without form present and all fields filled with valid data. -->
-<div class="content-bgcolor">
-    <h1>Are you sure you want to delete this game:</h1>
-    <h3 class="title" id="productTitle">@Model.Product.Name</h3>
+<div class="container">
     <form method="post">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         @Html.HiddenFor(x => x.Product.Id)
+
+        <h1>Product.Name</h1>
 
         <h1>Confirm Delete of this item</h1>
         <div class="form-group">
