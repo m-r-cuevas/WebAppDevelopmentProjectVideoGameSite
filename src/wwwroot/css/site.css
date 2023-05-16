@@ -142,8 +142,8 @@ body {
 p {
     font-family: 'Nunito', sans-serif;
 }
-/*Added styling for Privacy Text*/
-.privacy-text {
+/*Added a class to change the font color to white. */
+.white-text {
     color: #FFFFFF;
 }
 h1 {
