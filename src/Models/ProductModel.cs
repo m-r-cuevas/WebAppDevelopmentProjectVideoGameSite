@@ -43,8 +43,8 @@ namespace ConsoleCafe.WebSite.Models
         [StringLength(200, MinimumLength = 1, ErrorMessage = "200 charcter limit.")]
         public string Description { get; set; }
 
-        //Enum product type.
-        public ProductTypeEnum ProductType { get; set; } = ProductTypeEnum.Undefined;
+        //String Category of the game
+        public string ProductType { get; set; }
 
         //Integer array of ratings of the product - Not required.
         public int[] Ratings { get; set; }       
