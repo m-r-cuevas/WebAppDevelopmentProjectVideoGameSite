@@ -6,6 +6,7 @@
 @inject NavigationManager NavManager
 
 <!-- Add drop down menu for game type filtering. No functionality yet!-->
+@*
 <div>
     <div class="row">
         <div class="col">
@@ -25,7 +26,22 @@
         </div>
     </div>
 </div>
+*@
 
+<div>
+    <div class="row">
+        <div class="col">
+            <label class="filter-label" for="category">Select a game type to filter by type: </label>
+            <select @onchange="(e) => UpdateFilterType(e.Value.ToString())" id="GameType">
+        <option selected>None</option>
+        @foreach (ProductTypeEnum category in Enum.GetValues(typeof(ProductTypeEnum)))
+        {
+            <option value=@category>@ProductTypeEnumExtensions.DisplayName(category)</option>
+        }
+    </select>
+</div>
+</div>
+</div>
 <!-- Collect input of game name from user to search -->
 <div>
     <div class="row">
@@ -44,25 +60,31 @@
     @{
         var productList = ProductService.GetProducts();
 
+        //flag to check if any products were rendered
+        var productPresent = 0;
         /*
         Allows searching by name of game 
         if filter enabled, filter for string entered
         if not display all tiles
         */
 
-        if (FilterType)
-        {
-            /*productList = productList.Where(m => m.ProductType.Equals(typeFilter));*/
-        }
-
         if (FilterData)
         {
             productList = productList.Where(m => m.Name.ToLower().Contains(FilterDataString.ToLower()));
+        }
+
+        if (!String.IsNullOrEmpty(FilterDataType))
+        {
+            if (!FilterDataType.Equals("None"))
+            {
+                productList = productList.Where(m => m.ProductType.ToLower().Contains(FilterDataType.ToLower()));
+            }
 
         }
 
         if (productList.Any())
         {
+            productPresent = 1;
             <hr />
             <div class="row">
                 <div class="card-columns">
@@ -95,8 +117,20 @@
                 </div>
             </div>
         }
+
+        if (productPresent == 0)
+        {
+            <br />
+            <br />
+            <h2>404 Error</h2>
+            <h4>
+                The search results are on vacation. They left no forwarding address. Maybe they're sipping margaritas on a sunny beach. Try again with something we can find!!
+            </h4>
+        }
     }
 </div>
+
+
 
 <!--Page responsive popup code that displays that a button was clicked  -->
 @if(selectedProduct != null)
@@ -220,6 +254,7 @@
 
     string FilterDataString = "";
     bool FilterData = false;
+    string FilterDataType;
 
 
     void UpdateFilterText(string text)
@@ -254,9 +289,16 @@
     {
         // If the Filter is enabled, set the filter flag
         FilterType = false;
-        FilterDataString = "";
     }
 
+    /// <summary>
+    /// Changes category filter string to user selected option
+    /// </summary>
+    /// <param name="category">A Product's selected category</param>
+    void UpdateFilterType(string category)
+    {
+        FilterDataType = category;
+    }
 
 }
 
