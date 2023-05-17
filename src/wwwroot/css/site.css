@@ -189,3 +189,22 @@ ul {
 a.text-light:hover, a.text-light:focus {
     color: #ffa500 !important;
 }
+
+
+.social-icon {
+    color: white;
+    font-size: 24px;
+    margin-right: 10px;
+}
+
+    .social-icon:hover {
+        color: #ffa500 !important;
+    }
+
+.privacy-link {
+    color: white;
+}
+
+    .privacy-link:hover {
+        color: #ffa500 !important;
+    }
