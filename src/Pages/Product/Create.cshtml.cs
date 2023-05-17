@@ -21,8 +21,9 @@ namespace ConsoleCafe.WebSite.Pages.Product
         public JsonFileProductService ProductService { get; }
 
         //Object ProductService created.
-        public CreateModel(JsonFileProductService productService)
+        public CreateModel(ILogger<CreateModel> logger, JsonFileProductService productService)
         {
+            _logger = logger;
             ProductService = productService;
         }
 
