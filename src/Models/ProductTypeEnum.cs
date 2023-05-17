@@ -9,11 +9,10 @@ namespace ConsoleCafe.WebSite.Models
     /// enum for Product/Game Category
     /// </summary>
     public enum ProductTypeEnum
-    {
-        Undefined = 0,
-        FPS = 1,
-        Racing = 2,
-        Sports = 3,
+    { 
+        FPS = 0,
+        Racing = 1,
+        Sports = 2,
     }
 
     /// <summary>
