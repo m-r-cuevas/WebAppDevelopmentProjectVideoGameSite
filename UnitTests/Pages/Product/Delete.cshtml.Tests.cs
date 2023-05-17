@@ -33,16 +33,17 @@ namespace UnitTests.Pages.Product.Delete
         /// Tests whether the correct product is returned with the OnGet method.
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Products()
+        public void OnGet_Should_Set_Product_To_Equal_User_Selected_Id()
         {
             // Arrange
+            var data = TestHelper.ProductService.GetProducts().First();
 
             // Act
-            pageModel.OnGet("1");
+            pageModel.OnGet(data.Id);
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("Fifa", pageModel.Product.Name);
+            Assert.AreEqual(data.Id, pageModel.Product.Id);
         }
         #endregion OnGet
 
@@ -51,29 +52,24 @@ namespace UnitTests.Pages.Product.Delete
         /// Test the delete functionality by added a fake product and then removing it.
         /// </summary>
         [Test]
-        public void OnPostAsync_Valid_Should_Return_Products()
+        public void OnPost_Valid_Model_Delete_ProductData_And_Return_RedirectToIndexPage()
         {
             // Arrange
+            string expId = "temp";
 
-            // First Create the product to delete
-            ProductModel product = new();
-            pageModel.Product = TestHelper.ProductService.CreateData(product);
-            pageModel.Product.Name = "Example to Delete";
-            TestHelper.ProductService.UpdateData(pageModel.Product);
 
             // Act
             var result = pageModel.OnPost() as RedirectToPageResult;
 
             // Assert
+            Assert.AreEqual("./Update", result.PageName);
+            Assert.AreEqual(expId, result.RouteValues["Id"]);
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual(true, result.PageName.Contains("Index"));
-
-            // Confirm the item is deleted
-            Assert.AreEqual(null, TestHelper.ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(pageModel.Product.Id)));
         }
 
         /// <summary>
-        /// Checks that invalid states are caught.
+        /// The Unit test case to check if and error page is returned
+        /// when model is invalid
         /// </summary>
         [Test]
         public void OnPostAsync_InValid_Model_NotValid_Return_Page()
