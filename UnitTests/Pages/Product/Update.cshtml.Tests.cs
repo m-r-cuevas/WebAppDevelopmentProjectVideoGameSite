@@ -3,6 +3,7 @@ using ConsoleCafe.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace UnitTests.Pages.Product.Update
 {
@@ -36,18 +37,17 @@ namespace UnitTests.Pages.Product.Update
         /// And also check if its valid or not
         /// </summary>
         [Test]
-        public void OnGet_Valid_Should_Return_Product()
+        public void OnGet_With_Id_Temp_Returns_Location_With_Temp_Id()
         {
             // Arrange
+            var id = "temp";
 
-            // Act
-            pageModel.OnGet("1");
+            //Act
+            pageModel.OnGet(id);
 
-            // Assert
-            Assert.AreEqual(true, pageModel.ModelState.IsValid);
-            Assert.AreEqual("Fifa", pageModel.Product.Name);
+            //Assert
+            Assert.AreEqual(pageModel.Product.Id, id);
         }
-
         #endregion OnGet
 
         #region OnPost
