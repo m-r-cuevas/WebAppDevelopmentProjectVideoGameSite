@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
 <body>
     <header>
@@ -53,15 +54,32 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted bg-footer">
+   @* <footer class="border-top footer text-muted bg-footer">
         <div class="container">
             &copy; 2023 - ConsoleCafe.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
+    </footer> *@
+
+    <footer class="border-top footer text-muted bg-footer">
+        <div class="container">
+            &copy; 2023 - ConsoleCafe.WebSite - <a asp-area="" asp-page="/Privacy" class="privacy-link text-muted">Privacy</a>
+            <div class="social-icons float-right">
+                <a href="https://www.facebook.com/ravitarunprasad.nimmalapudi" class="social-icon text-muted" target="_blank"><i class="fab fa-facebook-f fa-sm"></i></a>
+                <a href="https://twitter.com/rtpntweets" class="social-icon text-muted" target="_blank"><i class="fab fa-twitter fa-sm"></i></a>
+                <a href="https://www.instagram.com/rtpnxinsta/" class="social-icon text-muted" target="_blank"><i class="fab fa-instagram fa-sm"></i></a>
+                <!-- Add more social media icons here -->
+            </div>
+        </div>
     </footer>
+
+
+
+
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
