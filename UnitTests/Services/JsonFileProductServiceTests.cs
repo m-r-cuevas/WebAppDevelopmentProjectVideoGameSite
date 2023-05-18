@@ -58,6 +58,31 @@ namespace UnitTests.Pages.Product.AddRating
 
         #endregion UpdateData
 
+        #region CreateData
+        /// <summary>
+        /// Tests whether the method creates a new product with id = 10 (current last id = 9)
+        /// </summary>
+        [Test]
+        public void CreateProduct_Valid_Product_Should_Return_True()
+        {
+
+            var newProduct = new ProductModel()
+            {
+                Id = "temp",
+                Name = "TestProduct",
+                Description = "test Description",
+                Url = "Enter URL",
+                Image = "",
+            };
+
+            var createProduct = TestHelper.ProductService.CreateData(newProduct);
+
+            Assert.AreEqual("10", createProduct.Id);
+
+        }
+
+        #endregion CreateData
+
         #region DeleteProduct
 
         /// <summary>
