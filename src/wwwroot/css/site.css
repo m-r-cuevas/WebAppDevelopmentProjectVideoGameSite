@@ -208,3 +208,7 @@ a.text-light:hover, a.text-light:focus {
     .privacy-link:hover {
         color: #ffa500 !important;
     }
+
+#GameType{
+    float: right;
+}
