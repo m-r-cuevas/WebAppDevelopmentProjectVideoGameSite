@@ -47,6 +47,8 @@ namespace UnitTests.Pages.Product.AddRating
             // Arrange
             var product = TestHelper.ProductService.GetProducts().First();
 
+            string productString = product.ToString();
+
             product.Name = "Fifa";
 
             // Act
