@@ -44,7 +44,7 @@ for details on configuring this project to bundle and minify static web assets. 
     background: #fbfafd;
 }
 
-/* Update font of navbar site name to monospace. -Maria */
+/* Update font of navbar site name to monospace. */
 a.navbar-brand {
     white-space: normal;
     font-family: monospace;
@@ -53,7 +53,7 @@ a.navbar-brand {
     word-break: break-all;
 }
 
-/*Update colour of the body. -Ravi */
+/*Update colour of the body. */
 .background-color{
     color:black;
 }
@@ -134,7 +134,7 @@ html {
 }
 
 body {
-    /*Updated the background colour. -Ravi */
+    /*Updated the background colour. */
     background-color:black;
   /* Margin bottom by footer height */
   margin-bottom: 60px;
@@ -190,25 +190,26 @@ a.text-light:hover, a.text-light:focus {
     color: #ffa500 !important;
 }
 
-
+/*Added styling for the social media icons*/
 .social-icon {
     color: white;
     font-size: 24px;
     margin-right: 10px;
 }
-
+/* Added Hover color for social media icons*/
     .social-icon:hover {
         color: #ffa500 !important;
     }
 
+/* Added a text color for the privacy button link on footer*/
 .privacy-link {
     color: white;
 }
-
+/* Added hover color for privacy on footer */
     .privacy-link:hover {
         color: #ffa500 !important;
     }
-
+/* Moved the filter function on homepage to right side*/
 #GameType{
     float: right;
 }
