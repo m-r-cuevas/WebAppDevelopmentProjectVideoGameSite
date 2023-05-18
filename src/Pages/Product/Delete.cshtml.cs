@@ -53,6 +53,7 @@ namespace ConsoleCafe.WebSite.Pages.Product
             {
                 return Page();
             }
+
             ProductService.DeleteData(Product.Id);
 
             return RedirectToPage("./Index");
