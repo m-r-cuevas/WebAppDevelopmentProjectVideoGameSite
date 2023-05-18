@@ -13,6 +13,9 @@ namespace UnitTests.Pages.Index
         #region TestSetup
         public static IndexModel pageModel;
 
+        /// <summary>
+        /// Set up necessary for index page tests and tests initializing page
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -29,6 +32,9 @@ namespace UnitTests.Pages.Index
         #endregion TestSetup
 
         #region getProducts
+        /// <summary>
+        /// Tests whether the products method of Index correctlty returns products 
+        /// </summary>
         [Test]
         public void Get_Products_Should_Return_True()
         {
@@ -45,6 +51,9 @@ namespace UnitTests.Pages.Index
         #endregion getProducts
 
         #region OnGet
+        /// <summary>
+        /// Test whether index model is set up correctly on get model
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
