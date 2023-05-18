@@ -33,9 +33,6 @@ namespace ConsoleCafe.WebSite.Models
                 ProductTypeEnum.FPS => "First Person Shooter Game",
                 ProductTypeEnum.Racing => "Racing Game",
                 ProductTypeEnum.Sports => "Sports Game",
-
-                // Default, Unknown
-                _ => "",
             } ;
         }
     }
