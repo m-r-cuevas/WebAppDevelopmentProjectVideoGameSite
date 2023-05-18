@@ -9,25 +9,18 @@
 <div>
     <div class="row">
         <div class="col">
-            <label class="filter-label" for="category">Select a game type to filter by type: </label>
             <select @onchange="(e) => UpdateFilterType(e.Value.ToString())" id="GameType">
-        <option selected>None</option>
+        <option selected>Filter</option>
         @foreach (ProductTypeEnum category in Enum.GetValues(typeof(ProductTypeEnum)))
         {
             <option value=@category>@ProductTypeEnumExtensions.DisplayName(category)</option>
         }
     </select>
-</div>
-</div>
-</div>
 
-<!-- Collect input of game name from user to search -->
-<div>
-    <div class="row">
-        <div class="col">
-            <label class="filter-label">Enter a game name to search: </label>
+            <!-- Collect input of game name from user to search -->
+
             <input id = "filter-input" type="text" @onchange="(e) => UpdateFilterText(e.Value.ToString())" value="@FilterDataString" />
-            <button @onclick="(e => EnableFilterData())" class="btn-filter">Filter</button>
+            <button @onclick="(e => EnableFilterData())" class="btn-filter">Search</button>
             <button @onclick="(e => ClearFilterData())" class="btn-filter">Clear</button>
         </div>
     </div>
@@ -55,7 +48,7 @@
 
         if (!String.IsNullOrEmpty(FilterDataType))
         {
-            if (!FilterDataType.Equals("None"))
+            if (!FilterDataType.Equals("Filter"))
             {
                 productList = productList.Where(m => m.ProductType.ToLower().Contains(FilterDataType.ToLower()));
             }
@@ -179,6 +172,7 @@
         ProductService.AddRating(selectedProductId, rating);
         SelectProduct(selectedProductId);
     }*@
+
     // Defining a function and setting the path for the nav manager.
     void MovetoView(string id)
     {
