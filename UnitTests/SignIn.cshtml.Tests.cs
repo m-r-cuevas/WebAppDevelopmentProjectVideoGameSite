@@ -13,6 +13,9 @@ namespace UnitTests.Pages.SignIn
         #region TestSetup
         public static SignInModel pageModel;
 
+        /// <summary>
+        /// Set up necessary for SignIn page tests and tests initializing page model
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -28,6 +31,9 @@ namespace UnitTests.Pages.SignIn
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test whether SignIn model is set up correctly on get
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
