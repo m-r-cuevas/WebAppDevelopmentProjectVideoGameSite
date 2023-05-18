@@ -60,12 +60,12 @@ namespace UnitTests.Pages.Product.AddRating
 
         #region CreateData
         /// <summary>
-        /// Tests whether the method creates a new product with id = 10 (current last id = 9)
+        /// Tests whether the method creates a new product with correct id (10) (current last id = 9)
         /// </summary>
         [Test]
         public void CreateProduct_Valid_Product_Should_Return_True()
         {
-
+            // Arrange
             var newProduct = new ProductModel()
             {
                 Id = "temp",
@@ -75,8 +75,10 @@ namespace UnitTests.Pages.Product.AddRating
                 Image = "",
             };
 
+            // Act
             var createProduct = TestHelper.ProductService.CreateData(newProduct);
 
+            // Assert
             Assert.AreEqual("10", createProduct.Id);
 
         }
