@@ -28,6 +28,22 @@ namespace UnitTests.Pages.Index
 
         #endregion TestSetup
 
+        #region getProducts
+        [Test]
+        public void Get_Products_Should_Return_True()
+        {
+            // Arrange
+
+            // Act
+            var products = pageModel.Products;
+            
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+        }
+
+        #endregion getProducts
+
         #region OnGet
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
