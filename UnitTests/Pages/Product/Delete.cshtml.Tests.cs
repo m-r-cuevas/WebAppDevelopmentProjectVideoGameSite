@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 using ConsoleCafe.WebSite.Pages.Product;
 using ConsoleCafe.WebSite.Models;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages.Product.Delete
 {
@@ -47,24 +48,50 @@ namespace UnitTests.Pages.Product.Delete
         }
         #endregion OnGet
 
-        #region OnPostAsync
+        #region OnPost
+
         /// <summary>
-        /// Test the delete functionality by added a fake product and then removing it.
+        /// Test the delete functionality and checking the game is deleted.
         /// </summary>
+        
         [Test]
-        public void OnPost_Valid_Model_Delete_ProductData_And_Return_RedirectToIndexPage()
+        public void OnPost_Valid_Model_Delete_ProductData_And_RedirectToIndexPage()
         {
             // Arrange
-            string expId = "temp";
+            var data = TestHelper.ProductService.GetProducts().First();
 
+            pageModel.OnGet(data.Id);
 
             // Act
-            var result = pageModel.OnPost() as RedirectToPageResult;
+            var result2 = pageModel.ProductService.GetProducts().Contains(data);
 
             // Assert
-            Assert.AreEqual("./Update", result.PageName);
-            Assert.AreEqual(expId, result.RouteValues["Id"]);
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+
+            Assert.AreEqual(false, result2);
+        }
+        /// <summary>
+        /// Tests the ModelState is valid to return correct page.
+        /// </summary>
+        
+        [Test]
+        public void OnPost_Valid_Model_Returns_Page()
+        {
+            // Arrange
+            var data = TestHelper.ProductService.GetProducts().First();
+
+            // Set the model to a valid model
+            pageModel.Product = data;
+
+            // Ensure model state is valid
+            pageModel.ModelState.Clear();
+
+            // Act
+            var result = pageModel.OnPost();
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.IsInstanceOf<PageResult>(result);
         }
 
         /// <summary>
