@@ -93,6 +93,7 @@ namespace UnitTests.Components
         }
         #endregion UpdateFilterText
 
+  
 
         /* test for EnableFilterData() */
         #region EnableFilterData
@@ -221,6 +222,33 @@ namespace UnitTests.Components
         }
 
         #endregion FilterAndRenderProducts
+
+        #region SelectLocation
+        [Test]
+        public void Select_Download_Should_Return_Page_Responsive()
+        {
+            // Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var id = "download-button";
+
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var buttonList = page.FindAll("Button");
+
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains(id));
+
+            // Act
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("You have clicked on the tile buttons"));
+        }
+        #endregion SelectLocation
         /* Comment out SubmitRating tests which are currently unecessary
         #region SubmitRating
 
