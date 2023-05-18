@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
 using static System.Net.Mime.MediaTypeNames;
+using System.Linq;
 
 namespace UnitTests.Pages.Product.Update
 {
@@ -48,6 +49,25 @@ namespace UnitTests.Pages.Product.Update
             //Assert
             Assert.AreEqual(pageModel.Product.Id, id);
         }
+
+        /// <summary>
+        /// Tests whether OnGet returns the correct product when given an valid id
+        /// </summary>
+        [Test]
+        public void OnGet_With_Id_Valid_Returns_Location_With_Valid_Id()
+        {
+            // Arrange
+            var id = "2";
+
+            //Act
+            pageModel.OnGet(id);
+            var result = TestHelper.ProductService.GetProducts().First();
+
+            //Assert
+            Assert.AreEqual(result.Id, id);
+        }
+
+
         #endregion OnGet
 
         #region OnPost
@@ -94,6 +114,32 @@ namespace UnitTests.Pages.Product.Update
             // Assert
             Assert.AreEqual(false, pageModel.ModelState.IsValid);
         }
+
+        /// <summary>
+        /// The Unit test case to check if a Product is returned 
+        /// When form is posted, and redirect to correct page
+        /// </summary>
+        [Test]
+        public void OnPost_NewValidID_Should_Create_ValidProduct()
+        {
+            // Arrange
+            pageModel.Product = new ConsoleCafe.WebSite.Models.ProductModel
+            {
+                Id = "temp",
+                Title = "testing",
+                Description = "testing",
+                Image = "testing"
+            };
+
+            // Act
+            var result = pageModel.OnPost() as RedirectToPageResult;
+
+            // Assert
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(true, result.PageName.Contains("Index"));
+        }
         #endregion OnPost
+
+
     }
 }
