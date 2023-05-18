@@ -13,6 +13,9 @@ namespace UnitTests.Pages.Privacy
         #region TestSetup
         public static PrivacyModel pageModel;
 
+        /// <summary>
+        /// Set up necessary for Privacy page tests and tests initializing page model
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -28,6 +31,9 @@ namespace UnitTests.Pages.Privacy
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Test whether Privacy model is set up correctly on get
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
