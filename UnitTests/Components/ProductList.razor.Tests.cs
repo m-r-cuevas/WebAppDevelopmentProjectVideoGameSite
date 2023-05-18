@@ -150,6 +150,77 @@ namespace UnitTests.Components
         }
         #endregion ClearFilterData
 
+        #region UpdateFilterCategory
+
+        /// <summary>
+        /// Tests that changing the cateogry filter dropdown 
+        /// returns content
+        /// </summary>
+        [Test]
+        public void UpdateFilterCategory_Should_return_Content()
+        {
+            //Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var categoryDropdown = page.Find("select");
+
+            // Act
+            categoryDropdown.Change("Racing");
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("GTA 5"));
+        }
+
+        #endregion UpdateFilterCategory
+
+        #region FilterAndRenderProducts
+
+        /// <summary>
+        /// Tests that filtering for an item when its incorrect category
+        /// is selected returns "Sorry! Could not find any items matching 
+        /// your search." Message
+        /// </summary>
+        [Test]
+        public void Filter_For_Non_Existing_Products_Should_Return_No_Matching_Products_Message()
+        {
+            //Arrange
+            Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
+            var page = RenderComponent<ProductList>();
+
+            // Find the Buttons (more info)
+            var categoryDropdown = page.Find("select");
+
+            // Find the Buttons (more info)
+            var buttonList = page.FindAll("button");
+            // Find the one that matches the ID looking for and click it
+            var button = buttonList.First(m => m.OuterHtml.Contains("Filter"));
+
+            // Find all input elements
+            var inputList = page.FindAll("input");
+            // Find input element with id filter-input 
+            var filterInput = inputList.First(m => m.Id.Equals("filter-input"));
+
+            // Act
+            // Change cateory to fruit
+            categoryDropdown.Change("Racing");
+
+            // Search for a Sport item
+            filterInput.Change("Fifa");
+            button.Click();
+
+            // Get the markup to use for the assert
+            var pageMarkup = page.Markup;
+
+            // Assert
+            Assert.AreEqual(true, pageMarkup.Contains("The search results are on vacation. They left no forwarding address. Maybe they're sipping margaritas on a sunny beach. Try again with something we can find!!"));
+        }
+
+        #endregion FilterAndRenderProducts
         /* Comment out SubmitRating tests which are currently unecessary
         #region SubmitRating
 
