@@ -102,7 +102,7 @@ namespace UnitTests.Components
         {
             // Arrange
             Services.AddSingleton<JsonFileProductService>(TestHelper.ProductService);
-            var filterButton = "Filter";
+            var filterButton = "Search";
 
             var page = RenderComponent<ProductList>();
 
@@ -199,7 +199,7 @@ namespace UnitTests.Components
             // Find the Buttons (more info)
             var buttonList = page.FindAll("button");
             // Find the one that matches the ID looking for and click it
-            var button = buttonList.First(m => m.OuterHtml.Contains("Filter"));
+            var button = buttonList.First(m => m.OuterHtml.Contains("Search"));
 
             // Find all input elements
             var inputList = page.FindAll("input");
