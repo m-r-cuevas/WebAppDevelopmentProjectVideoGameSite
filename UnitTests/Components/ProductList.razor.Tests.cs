@@ -1,12 +1,9 @@
 ﻿using Bunit;
 using NUnit.Framework;
-
 using ConsoleCafe.WebSite.Components;
 using Microsoft.Extensions.DependencyInjection;
 using ConsoleCafe.WebSite.Services;
 using System.Linq;
-using static System.Net.Mime.MediaTypeNames;
-
 namespace UnitTests.Components
 {
     public class ProductListTests : BunitTestContext
@@ -153,10 +150,7 @@ namespace UnitTests.Components
 
         #region UpdateFilterCategory
 
-        /// <summary>
-        /// Tests that changing the cateogry filter dropdown 
-        /// returns content
-        /// </summary>
+        /*Tests that changing the cateogry filter dropdown returns content*/
         [Test]
         public void UpdateFilterCategory_Should_return_Content()
         {
@@ -181,11 +175,7 @@ namespace UnitTests.Components
 
         #region FilterAndRenderProducts
 
-        /// <summary>
-        /// Tests that filtering for an item when its incorrect category
-        /// is selected returns "Sorry! Could not find any items matching 
-        /// your search." Message
-        /// </summary>
+        /*Tests that filtering for an item when its incorrect category is selected returns item not found message*/
         [Test]
         public void Filter_For_Non_Existing_Products_Should_Return_No_Matching_Products_Message()
         {
@@ -223,6 +213,7 @@ namespace UnitTests.Components
 
         #endregion FilterAndRenderProducts
 
+        /*Tests for clicking the download button shows page responsive page*/
         #region SelectLocation
         [Test]
         public void Select_Download_Should_Return_Page_Responsive()
