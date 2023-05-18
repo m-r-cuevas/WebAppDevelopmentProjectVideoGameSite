@@ -85,7 +85,7 @@ namespace UnitTests.Components
             var pageMarkup = page.Markup;
 
             // Assert
-            Assert.AreEqual(true, pageMarkup.Contains($"{testText}"));
+            Assert.AreEqual(true, pageMarkup.Contains("Testing Filter text"));
 
         }
         #endregion UpdateFilterText
