@@ -93,7 +93,7 @@ a {
   border-color: #1861ac;
 }
 
-/* Created a class for updating the content's background colour -Ravi.*/
+/* Created a class for updating the content's background colour */
 .content-bgcolor{
     background-color: #FFF;
     padding: 1rem;
@@ -180,7 +180,7 @@ ul {
 .bg-footer {
     background-color: black;
 }
-/*Added a table background section to format index table -Maria*/
+/*Added a table background section to format index table */
 .bg-table {
     background-color: white;
 }
