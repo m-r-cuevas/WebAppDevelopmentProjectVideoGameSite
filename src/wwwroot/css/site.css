@@ -44,14 +44,14 @@ for details on configuring this project to bundle and minify static web assets. 
     background: #fbfafd;
 }
 
-/* Update font of navbar site name to monospace. */
-a.navbar-brand {
-    white-space: normal;
-    font-family: monospace;
-    font-size: xx-large;
-    text-align: center;
-    word-break: break-all;
+.logo-image {
+    max-width: 15%;
+    height: fit-content;
+    padding: 1rem;
 }
+
+
+
 
 /*Update colour of the body. */
 .background-color{
@@ -91,6 +91,48 @@ a {
   color: #fff;
   background-color: #1b6ec2;
   border-color: #1861ac;
+}
+
+.navbar-collapse collapse {
+    align-content:center;
+}
+
+.nav-link text-white {
+    text-align:center;
+}
+
+.navbar-collapse {
+    font-size: 18px;
+    justify-content: center;
+}
+
+.navbar-collapse ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+}
+
+.navbar-collapse li {
+        display: inline-block;
+}
+
+a.navbar-brand {
+    white-space: normal;
+    font-family: monospace;
+    font-size: xx-large;
+    text-align: center;
+    word-break: break-all;
+    font-weight: 900;
+}
+
+.navbar-nav {
+    width: 100%;
+    text-align: center;
+}
+
+.navbar-nav .nav-item {
+    display: inline-block;
+    float: none;
 }
 
 /* Created a class for updating the content's background colour */
@@ -175,11 +217,14 @@ ul {
 }
 /*Backgrounds*/
 .bg-navbar {
-    background: #111111;
+    background: #111111; /* Fallback color for older browsers */
+    background: linear-gradient(to right, #E3170A, #11111);
 }
+
 .bg-footer {
-    background-color: black;
+    background: linear-gradient(to right, #E3170A, #11111);
 }
+
 /*Added a table background section to format index table */
 .bg-table {
     background-color: white;
