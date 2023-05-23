@@ -12,17 +12,19 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-navbar border-bottom box-shadow mb-3">
+        <nav class=" bg-navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-navbar border-bottom box-shadow mb-3 ">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">CONSOLE CAFE</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Index">
+                    <img src = "~/images/Logo/Logo1.png" title= "Console Cafe" alt = "Console Cafe Logo" class="logo-image" />
+                    CONSOLE CAFE</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Start of the navbar collapse anything in here will collapse when the screen is smaller-->
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                <div class="navbar-collapse collapse">
                     <!-- This affects the list of links on the right side of the navbar-->
-                    <ul class="navbar-nav ml-auto">
+                    <ul class="navbar-nav">
                         <!--Added a Home button-->
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Index">HOME</a>
