@@ -4,11 +4,19 @@ using ConsoleCafe.WebSite.Pages.Product;
 using System;
 namespace UnitTests.Pages.Product.Read
 {
+    /// <summary>
+    /// Unit Tests for the View Page.
+    /// </summary>
     public class ReadTests
     {
         #region TestSetup
+
+        //Instance for ViewModel
         public static ViewModel pageModel;
 
+        /// <summary>
+        /// Initializing the model.
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -19,6 +27,10 @@ namespace UnitTests.Pages.Product.Read
         #endregion TestSetup
 
         #region OnGet
+
+        /// <summary>
+        /// Test case to check if the game selected is correct.
+        /// </summary>
         [Test]
         public void OnGet_Should_Select_Matching_Id()
         {
@@ -35,6 +47,10 @@ namespace UnitTests.Pages.Product.Read
         #endregion OnGet
 
         #region GetAverageRating
+
+        /// <summary>
+        /// Test case to check whether average rating calculation is correct.
+        /// </summary>
         [Test]
         public void GetAverageRating_Ratings_Is_Null_Should_Return_Zero()
         {
