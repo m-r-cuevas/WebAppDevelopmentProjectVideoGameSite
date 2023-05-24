@@ -100,5 +100,47 @@
     "Description": "A wrestling simulation game in which players select real-world competitors from the WWE roster, compete in matches, and progress through multiple storylines.",
     "ProductType": "Sports",
     "Ratings": null
+  },
+  {
+    "Id": "10",
+    "Name": "The Legend of Zelda: Tears of the Kingdom",
+    "Maker": "Nintendo",
+    "img": "/images/loz.png",
+    "Url": "https://images5.alphacoders.com/131/1315150.jpg?dl=1",
+    "Title": "Edit here",
+    "Description": "An open-world action-adventure game where players, as Link, explore Hyrule and two new areas, the Sky Islands and the Depths, to find weapons, resources, and complete quests.",
+    "ProductType": "Adventure",
+    "Ratings": null
+  },
+  {
+    "Id": "11",
+    "Name": "Stray",
+    "Maker": "BlueTwelve",
+    "img": "/images/stray.png",
+    "Url": "https://images8.alphacoders.com/127/1279790.png?dl=1",
+    "Title": "Edit here",
+    "Description": "A third-person cat adventure game set amidst the detailed neon-lit alleys of a decaying cybercity and the murky environments of its seedy underbelly.",
+    "Ratings": null
+  },
+  {
+    "Id": "12",
+    "Name": "The Last of Us",
+    "Maker": "Naughty Dog",
+    "img": "/images/lou.png",
+    "Url": "https://images4.alphacoders.com/131/1313399.png?dl=1",
+    "Title": "Edit here",
+    "Description": "An action-adventure game where players play as Joel, a smuggler tasked with escorting a teenage girl, Ellie, across a post-apocalyptic United States.",
+    "Ratings": null
+  },
+  {
+    "Id": "13",
+    "Name": "Skyrim",
+    "Maker": "Bethesda",
+    "img": "/images/skyrim.png",
+    "Url": "https://images.alphacoders.com/186/186993.jpg?dl=1",
+    "Title": "Edit here",
+    "Description": "A fantasy action role-playing game, where the player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages.",
+    "Ratings": null
   }
+
 ]
