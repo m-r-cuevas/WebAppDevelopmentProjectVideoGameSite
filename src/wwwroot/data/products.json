@@ -120,6 +120,7 @@
     "Url": "https://images8.alphacoders.com/127/1279790.png?dl=1",
     "Title": "Edit here",
     "Description": "A third-person cat adventure game set amidst the detailed neon-lit alleys of a decaying cybercity and the murky environments of its seedy underbelly.",
+    "ProductType": "Adventure",
     "Ratings": null
   },
   {
@@ -130,6 +131,7 @@
     "Url": "https://images4.alphacoders.com/131/1313399.png?dl=1",
     "Title": "Edit here",
     "Description": "An action-adventure game where players play as Joel, a smuggler tasked with escorting a teenage girl, Ellie, across a post-apocalyptic United States.",
+    "ProductType": "Adventure",
     "Ratings": null
   },
   {
@@ -140,6 +142,7 @@
     "Url": "https://images.alphacoders.com/186/186993.jpg?dl=1",
     "Title": "Edit here",
     "Description": "A fantasy action role-playing game, where the player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages.",
+    "ProductType": "Adventure",
     "Ratings": null
   }
 
