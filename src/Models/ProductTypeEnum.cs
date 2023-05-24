@@ -13,6 +13,7 @@ namespace ConsoleCafe.WebSite.Models
         FPS = 0,
         Racing = 1,
         Sports = 2,
+        Adventure = 3,
     }
 
     /// <summary>
@@ -33,6 +34,7 @@ namespace ConsoleCafe.WebSite.Models
                 ProductTypeEnum.FPS => "First Person Shooter Game",
                 ProductTypeEnum.Racing => "Racing Game",
                 ProductTypeEnum.Sports => "Sports Game",
+                ProductTypeEnum.Adventure => "Adventure Game",
             } ;
         }
     }
