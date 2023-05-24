@@ -30,7 +30,7 @@
 
             <!-- Displays only the properties selected -Ravi. -->
             @foreach (var property in Model.Product.GetType().GetProperties()
-            .Where(p => p.Name == "Maker" || p.Name == "Description" ))
+            .Where(p => p.Name == "Maker" || p.Name == "Description" || p.Name == "ProductType"))
     {
             <tr>
                 <td>@property.Name</td>
