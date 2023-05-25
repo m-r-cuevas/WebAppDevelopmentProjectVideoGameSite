@@ -1,9 +1,9 @@
 ﻿.checked {
-  color: orange;
+    color: orange;
 }
 
 .fa-star {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 /* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
@@ -15,31 +15,32 @@ for details on configuring this project to bundle and minify static web assets. 
 
 .card-columns .card-body {
     height: 100px;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Pantra', sans-serif;
     background: #fbfafd;
 }
 
 .card-columns .card-img {
-  height: 330px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
-  opacity: .8;
+    height: 330px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    opacity: .8;
 }
 
 .modal .card-img {
-  height: 500px;
-  vertical-align: bottom;
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+    height: 500px;
+    vertical-align: bottom;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
 }
 
 .card-columns .card:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 20px rgba(37,33,82,.12), 0 4px 8px rgba(37,33,82,.06);
 }
+
 .card-footer {
     background: #fbfafd;
 }
@@ -50,29 +51,28 @@ for details on configuring this project to bundle and minify static web assets. 
     padding: 1rem;
 }
 
-
-
-
 /*Update colour of the body. */
-.background-color{
-    color:black;
+.background-color {
+    color: black;
 }
 
 /* Provide sufficient contrast against white background */
 a {
-   color: #0366d6;
+    color: #0366d6;
 }
 
 .btn-primary {
     color: #fff;
+    font-family: 'Pantra', sans-serif;
     background-color: #252152;
     border-color: #252152;
 }
-.btn-primary:hover {
-    color: #fff;
-    background-color: darkorange;
-    border-color: #e9a8a6;
-}
+
+    .btn-primary:hover {
+        color: #fff;
+        background-color: darkorange;
+        border-color: #e9a8a6;
+    }
 
 /* Add class for filter labels on home page */
 .filter-label {
@@ -82,23 +82,24 @@ a {
 .btn-filter {
     background-color: #FFFFFF;
 }
-.btn-filter:hover {
-    background-color: darkorange;
-    border-color: darkorange;
-}
+
+    .btn-filter:hover {
+        background-color: darkorange;
+        border-color: darkorange;
+    }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
 }
 
 .navbar-collapse collapse {
-    align-content:center;
+    align-content: center;
 }
 
 .nav-link text-white {
-    text-align:center;
+    text-align: center;
 }
 
 .navbar-collapse {
@@ -106,23 +107,23 @@ a {
     justify-content: center;
 }
 
-.navbar-collapse ul {
+    .navbar-collapse ul {
         margin: 0;
         padding: 0;
         display: inline-block;
-}
+    }
 
-.navbar-collapse li {
+    .navbar-collapse li {
         display: inline-block;
-}
+    }
 
 a.navbar-brand {
     white-space: normal;
-    font-family: monospace;
+    font-family: Ultra;
     font-size: xx-large;
     text-align: center;
     word-break: break-all;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 .navbar-nav {
@@ -130,13 +131,13 @@ a.navbar-brand {
     text-align: center;
 }
 
-.navbar-nav .nav-item {
-    display: inline-block;
-    float: none;
-}
+    .navbar-nav .nav-item {
+        display: inline-block;
+        float: none;
+    }
 
 /* Created a class for updating the content's background colour */
-.content-bgcolor{
+.content-bgcolor {
     background-color: #FFF;
     padding: 1rem;
 }
@@ -144,76 +145,94 @@ a.navbar-brand {
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
+
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
+
 .border-bottom {
-  border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
 }
 
 .box-shadow {
-  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
 }
 
 button.accept-policy {
-  font-size: 1rem;
-  line-height: inherit;
+    font-size: 1rem;
+    line-height: inherit;
 }
 
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
     /*Updated the background colour. */
-    background-color:black;
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    background-color: black;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
 }
+
 p {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Pantra', sans-serif;
 }
 /*Added a class to change the font color to white. */
 .white-text {
     color: #FFFFFF;
 }
+
 h1 {
+    font-family: 'Ultra', sans-serif;
+    font-weight: 100;
+    font-size: xx-large;
     color: black;
 }
+
 h2 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Ultra', sans-serif;
+    font-weight: 100;
+    color: #FFFFFF;
+}
+
+h3 {
+    font-family: 'Ultra', sans-serif;
+    font-weight: 300;
     color: #FFFFFF;
 }
 /* Added a font color of white for level 4 headers */
 h4 {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Ultra', sans-serif;
+    font-weight: 300;
     color: #FFFFFF;
 }
+
 ul {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Pantra', sans-serif;
 }
 /* Added class form-group to update color to be visible against background */
 .form-group {
     color: #FFFFFF;
 }
+
 .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
     white-space: nowrap;
     line-height: 60px; /* Vertically center the text there */
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Pantra', sans-serif;
 }
 /*Backgrounds*/
 .bg-navbar {
@@ -241,7 +260,7 @@ a.text-light:hover, a.text-light:focus {
     font-size: 24px;
     margin-right: 10px;
 }
-/* Added Hover color for social media icons*/
+    /* Added Hover color for social media icons*/
     .social-icon:hover {
         color: #ffa500 !important;
     }
@@ -250,12 +269,12 @@ a.text-light:hover, a.text-light:focus {
 .privacy-link {
     color: white;
 }
-/* Added hover color for privacy on footer */
+    /* Added hover color for privacy on footer */
     .privacy-link:hover {
         color: #ffa500 !important;
     }
 /* Moved the filter function on homepage to right side*/
-#GameType{
+#GameType {
     float: right;
 }
 
@@ -264,7 +283,7 @@ a.text-light:hover, a.text-light:focus {
     display: flex;
     flex-direction: row;
     width: 1300px;
-    margin-top: 30px;
+    margin-top: 20px;
     margin-right: 50px;
 }
 
@@ -278,3 +297,7 @@ a.text-light:hover, a.text-light:focus {
     padding: 5px;
 }
 /* End of About us page styling */
+
+.normal-text {
+    font-family: 'Pantra', sans-serif;
+}
