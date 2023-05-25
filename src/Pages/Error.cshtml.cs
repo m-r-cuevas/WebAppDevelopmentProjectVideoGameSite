@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
-// Adding comment for Git Lab : Maria
 namespace ConsoleCafe.WebSite.Pages
 {
     /// <summary>
@@ -14,6 +13,9 @@ namespace ConsoleCafe.WebSite.Pages
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public class ErrorModel : PageModel
     {
+        /// <summary>
+        /// Method to get and set RequestId
+        /// </summary>
         public string RequestId { get; set; }
 
         /// <summary>
@@ -22,6 +24,7 @@ namespace ConsoleCafe.WebSite.Pages
         /// </summary>
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
+        // Create a private logger object
         private readonly ILogger<ErrorModel> _logger;
 
         /// <summary>
