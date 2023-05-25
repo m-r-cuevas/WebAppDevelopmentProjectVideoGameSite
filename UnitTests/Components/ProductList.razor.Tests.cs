@@ -164,7 +164,9 @@ namespace UnitTests.Components
 
         #region UpdateFilterCategory
 
-        /*Tests that changing the cateogry filter dropdown returns content*/
+        /// <summary>
+        /// Tests that changing the cateogry filter dropdown returns content.
+        /// </summary>
         [Test]
         public void UpdateFilterCategory_Should_return_Content()
         {
