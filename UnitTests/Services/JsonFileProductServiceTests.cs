@@ -12,7 +12,9 @@ namespace UnitTests.Pages.Product.AddRating
     public class JsonFileProductServiceTests
     {
         #region TestSetup
-
+        /// <summary>
+        /// Initializing JsonFileProductServices Tests
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
