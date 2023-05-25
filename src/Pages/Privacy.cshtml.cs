@@ -9,7 +9,8 @@ namespace ConsoleCafe.WebSite.Pages
     /// </summary>
     public class PrivacyModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger; //Readonly ILogger object that allows logging.
+        //Readonly ILogger object that allows logging.
+        private readonly ILogger<PrivacyModel> _logger; 
 
         /// <summary>
         /// PrivacyModel constructor
