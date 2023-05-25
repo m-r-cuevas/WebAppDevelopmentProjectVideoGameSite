@@ -8,9 +8,13 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.Download
 {
+    /// <summary>
+    /// Unit tests for Download page functionality.
+    /// </summary>
     public class DownloadTests
     {
         #region TestSetup
+        // Set up new Download Model instance
         public static DownloadModel pageModel;
 
         /// <summary>
