@@ -9,7 +9,8 @@ namespace ConsoleCafe.WebSite.Pages
     /// </summary>
     public class AboutModel : PageModel
     {
-        private readonly ILogger<AboutModel> _logger; //Readonly ILogger object that allows logging.
+        //Readonly ILogger object that allows logging.
+        private readonly ILogger<AboutModel> _logger; 
 
         /// <summary>
         /// AboutModel constructor
