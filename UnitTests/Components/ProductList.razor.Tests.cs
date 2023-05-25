@@ -6,8 +6,14 @@ using ConsoleCafe.WebSite.Services;
 using System.Linq;
 namespace UnitTests.Components
 {
+    /// <summary>
+    /// Unit tests for ProdcutList.razor functions.
+    /// </summary>
     public class ProductListTests : BunitTestContext
     {
+        /// <summary>
+        /// Tests whether page is properly set up with the expected games
+        /// </summary>
         #region TestSetup
 
         [SetUp]
@@ -16,7 +22,6 @@ namespace UnitTests.Components
         }
 
         #endregion TestSetup
-
         [Test]
         public void ProductList_Default_Should_Return_Content()
         {
@@ -34,6 +39,9 @@ namespace UnitTests.Components
         }
 
         #region SelectProduct
+        /// <summary>
+        /// Tests whether the correct information is returned when the view more button is clicked
+        /// </summary>
         [Test]
         public void SelectProduct_Valid_ID_Fifa_1_Should_Return_Content()
         {
@@ -60,7 +68,9 @@ namespace UnitTests.Components
         }
         #endregion SelectProduct
 
-        /* test for UpdateFilter() */
+        /// <summary>
+        /// test for UpdateFilter(). Tests whether the filter is updatd when a new filter is entered. 
+        /// </summary>
         #region UpdateFilterText
         [Test]
         public void Update_Filter_Text_Valid_Should_Return_True()
@@ -90,9 +100,11 @@ namespace UnitTests.Components
         }
         #endregion UpdateFilterText
 
-  
 
-        /* test for EnableFilterData() */
+
+        /// <summary>
+        /// test for EnableFilterData(). Tests whether the enable filter is set to true when the filter button is clicked.
+        /// </summary>
         #region EnableFilterData
         [Test]
         public void Enable_Filter_Data_Set_to_True_Should_Return_True()
@@ -120,7 +132,9 @@ namespace UnitTests.Components
         }
         #endregion EnableFilterData
 
-        /* test for ClearFilterData() */
+        /// <summary>
+        /// test for ClearFilterData(). Tests whether enable filter is set to false when the clear button is clicked.
+        /// </summary>
         #region ClearFilterData
         [Test]
         public void Clear_Filter_Data_Set_to_False_Should_Return_False()
@@ -175,7 +189,9 @@ namespace UnitTests.Components
 
         #region FilterAndRenderProducts
 
-        /*Tests that filtering for an item when its incorrect category is selected returns item not found message*/
+        /// <summary>
+        /// Tests that filtering for an item when its incorrect category is selected returns item not found message.
+        /// </summary>
         [Test]
         public void Filter_For_Non_Existing_Products_Should_Return_No_Matching_Products_Message()
         {
@@ -213,7 +229,9 @@ namespace UnitTests.Components
 
         #endregion FilterAndRenderProducts
 
-        /*Tests for clicking the download button shows page responsive page*/
+        /// <summary>
+        /// Tests for clicking the download button shows page responsive page.
+        /// </summary>
         #region SelectLocation
         [Test]
         public void Select_Download_Should_Return_Page_Responsive()
