@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,6 +8,9 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css?family=Yellowtail&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ultra&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pantra&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 </head>
@@ -15,8 +19,9 @@
         <nav class=" bg-navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-navbar border-bottom box-shadow mb-3 ">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-page="/Index">
-                    <img src = "~/images/Logo/Logo1.png" title= "Console Cafe" alt = "Console Cafe Logo" class="logo-image" />
-                    CONSOLE CAFE</a>
+                    <img src="~/images/Logo/Logo1.png" title="Console Cafe" alt="Console Cafe Logo" class="logo-image" />
+                    CONSOLE CAFE
+                </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -29,7 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Index">HOME</a>
                         </li>
-                        <!-- Add a temporary games button to test CRUDi index page. -Maria -->
+                        <!-- Add a temporary games button to test CRUDi index page.-->
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Product/Index">GAMES</a>
                         </li>
@@ -41,7 +46,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/Privacy">PRIVACY</a>
                         </li>
-                        <!-- Add a sign in button that is right aligned. -Maria -->
+                        <!-- Add a sign in button that is right aligned.-->
                         <li class="nav-item">
                             <a class="nav-link text-light" asp-area="" asp-page="/SignIn">SIGN IN</a>
                         </li>
@@ -56,10 +61,10 @@
         </main>
     </div>
 
-   @* <footer class="border-top footer text-muted bg-footer">
-        <div class="container">
-            &copy; 2023 - ConsoleCafe.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
+    @* <footer class="border-top footer text-muted bg-footer">
+    <div class="container">
+    &copy; 2023 - ConsoleCafe.WebSite - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    </div>
     </footer> *@
 
     <footer class="border-top footer text-muted bg-footer">
@@ -86,3 +91,4 @@
     @RenderSection("Scripts", required: false)
 </body>
 </html>
+
