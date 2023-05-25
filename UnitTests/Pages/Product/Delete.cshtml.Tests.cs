@@ -10,6 +10,9 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace UnitTests.Pages.Product.Delete
 {
+    /// <summary>
+    /// Unit tests for the Delete page functionality.
+    /// </summary>
     public class DeleteTests
     {
         #region TestSetup
@@ -70,10 +73,10 @@ namespace UnitTests.Pages.Product.Delete
 
             Assert.AreEqual(false, result2);
         }
+
         /// <summary>
         /// Tests the ModelState is valid to return correct page.
         /// </summary>
-        
         [Test]
         public void OnPost_Valid_Model_Returns_Page()
         {
