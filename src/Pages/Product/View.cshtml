@@ -3,19 +3,12 @@
 @inject JsonFileProductService ProductService
 @model ConsoleCafe.WebSite.Pages.Product.ViewModel
 
-
-
 @{
     ViewData["Title"] = "View Page";
 }
 
-
-
 <div class="content-bgcolor">
     <h1 class="title" id="productTitle">@Model.Product.Name</h1>
-
-
-
     <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
 
     <!-- Create a table to display every property of the Product class-->
@@ -44,16 +37,10 @@
 
     </table>
 
-
-
 </div>
 
-
-
 <br />
 <br />
-
-
 
 <div class="row">
     <a asp-page="Update" asp-route-id="@Model.Product.Id" class="btn btn-primary">Update</a> &nbsp; &nbsp;
