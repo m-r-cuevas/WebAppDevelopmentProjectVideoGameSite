@@ -8,9 +8,13 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.SignIn
 {
+    /// <summary>
+    /// Unit tests for Sign in page functionality.
+    /// </summary>
     public class SignInTests
     {
         #region TestSetup
+        // Set up new SignInModel instance
         public static SignInModel pageModel;
 
         /// <summary>
