@@ -60,10 +60,14 @@ namespace ConsoleCafe.WebSite.Pages.Product
                 {
                     case "Name":
                         return "Enter the name of the game.";
+                    case "Maker":
+                        return "Enter the maker of the game.";
                     case "Description":
                         return "Enter a description for the game.";
                     case "Image":
                         return "Enter the image url for the game.";
+                    default: return "";
+
                 }
             }
 
