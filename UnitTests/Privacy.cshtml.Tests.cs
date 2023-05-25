@@ -8,9 +8,13 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.Privacy
 {
+    /// <summary>
+    /// Unit tests for Privacy page functionality.
+    /// </summary>
     public class PrivacyTests
     {
         #region TestSetup
+        // Set up new PrivacyModel instance
         public static PrivacyModel pageModel;
 
         /// <summary>
