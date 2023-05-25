@@ -126,7 +126,8 @@ namespace UnitTests.Pages.Product.Update
             pageModel.Product = new ConsoleCafe.WebSite.Models.ProductModel
             {
                 Id = "temp",
-                Title = "testing",
+                Name= "testing",
+                Maker = "testing",
                 Description = "testing",
                 Image = "testing"
             };
@@ -139,6 +140,66 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual(true, result.PageName.Contains("Index"));
         }
         #endregion OnPost
+
+        #region GetPlaceHolder
+
+        /// <summary>
+        /// Test to check if the placeholder are returning the correct messages.
+        /// </summary>
+        [Test]
+        public void GetPlaceHolder_TempModelId_Should_Return_CorrectPlaceHolder()
+        {
+            // Arrange
+            pageModel.ModelId = "temp";
+            string expectedPlaceHolderName = "Enter the name of the game.";
+            string expectedPlaceHolderMaker = "Enter the maker of the game.";
+            string expectedPlaceHolderDescription = "Enter a description for the game.";
+            string expectedPlaceHolderImage = "Enter the image url for the game.";
+            string expectedPlaceHolderRandom = "";
+
+
+            // Act
+            string actualPlaceHolderForName = pageModel.GetPlaceHolder("Name");
+            string actualPlaceHolderForMaker = pageModel.GetPlaceHolder("Maker");
+            string actualPlaceHolderForDescription = pageModel.GetPlaceHolder("Description");
+            string actualPlaceHolderForImage = pageModel.GetPlaceHolder("Image");
+            string actualPlaceHolderForRandom = pageModel.GetPlaceHolder("Random");
+
+            // Assert
+            Assert.AreEqual(expectedPlaceHolderName, actualPlaceHolderForName);
+            Assert.AreEqual(expectedPlaceHolderMaker, actualPlaceHolderForMaker);
+            Assert.AreEqual(expectedPlaceHolderDescription, actualPlaceHolderForDescription);
+            Assert.AreEqual(expectedPlaceHolderImage, actualPlaceHolderForImage);
+            Assert.AreEqual(expectedPlaceHolderRandom, actualPlaceHolderForRandom);
+        }
+
+        /// <summary>
+        /// Test to check if the placeholder are returning the correct messages.
+        /// </summary>
+        [Test]
+        public void GetPlaceHolder_NotTempModelId_Should_Return_CorrectPropertyValue()
+        {
+            // Arrange
+            pageModel.ModelId = "1";
+            pageModel.Product = new ConsoleCafe.WebSite.Models.ProductModel
+            {
+                Id = "1",
+                Name = "Test1",
+                Maker = "Test1",
+                Description = "Test1.",
+                Image = "Test1",
+                Ratings = null
+            };
+            string expectedPropertyValue = pageModel.Product.Name;
+
+            // Act
+            string actualPropertyValue = pageModel.GetPlaceHolder("Name");
+
+            // Assert
+            Assert.AreEqual(expectedPropertyValue, actualPropertyValue);
+        }
+
+        #endregion GetPlaceHolder
 
 
     }
