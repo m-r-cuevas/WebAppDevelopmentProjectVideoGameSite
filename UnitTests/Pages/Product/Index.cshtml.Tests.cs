@@ -8,11 +8,15 @@ using ConsoleCafe.WebSite.Pages.Product;
 
 namespace UnitTests.Pages.Product.Index
 {
+    /// <summary>
+    /// Unit tests for the index page functionality. 
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
+        // Set up new PageContext instance
         public static PageContext pageContext;
-
+        // Set up new IndexModel instance
         public static IndexModel pageModel;
 
         /// <summary>
