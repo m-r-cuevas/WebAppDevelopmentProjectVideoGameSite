@@ -10,11 +10,18 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.Error
 {
+    /// <summary>
+    /// Unit tests for error page functionality. 
+    /// </summary>
     public class ErrorTests
     {
         #region TestSetup
+        // Set up new instance of ErrorModel
         public static ErrorModel pageModel;
 
+        /// <summary>
+        /// Tests whether the page initializes correctly.
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -30,6 +37,9 @@ namespace UnitTests.Pages.Error
         #endregion TestSetup
 
         #region OnGet
+        /// <summary>
+        /// Tests whether valid activity returns the correct RequestId
+        /// </summary>
         [Test]
         public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
         {
@@ -49,6 +59,9 @@ namespace UnitTests.Pages.Error
             Assert.AreEqual(activity.Id, pageModel.RequestId);
         }
 
+        /// <summary>
+        /// Tests whther invalid activity returns correct error
+        /// </summary>
         [Test]
         public void OnGet_InValid_Activity_Null_Should_Return_TraceIdentifier()
         {
