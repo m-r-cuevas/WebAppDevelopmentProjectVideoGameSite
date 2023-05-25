@@ -1,4 +1,5 @@
-@page "{Id}"
+@page "{id}"
+@using ConsoleCafe.WebSite.Models;
 @using ConsoleCafe.WebSite.Services
 @inject JsonFileProductService ProductService
 @model ConsoleCafe.WebSite.Pages.Product.UpdateModel
@@ -23,31 +24,42 @@
         <!--Update page displays product name, description and Image URL-->
         <div class="form-group">
             <label asp-for="Product.Name" class="control-label"></label>
-            <input asp-for="Product.Name" class="form-control" />
+            <input asp-for="Product.Name" class="form-control"
+                   placeholder="@Model.GetPlaceHolder("Name")"/>
             <span asp-validation-for="Product.Name" class="text-danger"></span>
         </div>
 
         <div class="form-group">
             <label asp-for="Product.Maker" class="control-label"></label>
-            <input asp-for="Product.Maker" class="form-control" />
+            <input asp-for="Product.Maker" class="form-control"
+                   placeholder="@Model.GetPlaceHolder("Maker")"/>
             <span asp-validation-for="Product.Maker" class="text-danger"></span>
         </div>
         
 
         <div class="form-group">
             <label asp-for="Product.Description" class="control-label"></label>
-            <input asp-for="Product.Description" class="form-control" />
+            <input asp-for="Product.Description" class="form-control"
+                   placeholder="@Model.GetPlaceHolder("Description")"/>
             <span asp-validation-for="Product.Description" class="text-danger"></span>
         </div>
       
         <div class="form-group">
             <label asp-for="Product.Image" class="control-label"></label>
-            <input asp-for="Product.Image" class="form-control" />
+            <input asp-for="Product.Image" class="form-control"
+                   placeholder="@Model.GetPlaceHolder("Image")"/>
             <span asp-validation-for="Product.Image" class="text-danger"></span>
         </div>
 
         <div class="form-group">
-            <input type="submit" value="Save" class="btn btn-primary" />
+            @if (Model.ModelId == "temp")
+            {
+                <input type="submit" value="Create new entry" class="btn btn-primary"/>
+            }
+            else
+            {
+                <input type="submit" value="Update entry" class="btn btn-primary"/>
+            }
         </div>
     </form>
 
