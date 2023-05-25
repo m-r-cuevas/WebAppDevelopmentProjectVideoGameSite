@@ -65,6 +65,9 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(0, ratings);
         }
 
+        /// <summary>
+        /// Tests whether a request for a non-null product rating returns the correct results.
+        /// </summary>
         [Test]
         public void GetAverageRating_Ratings_Not_Null_Should_Return_The_Avg_Rating_Of_Product_Matching_Product_Id()
         {
