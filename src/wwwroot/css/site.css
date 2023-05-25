@@ -258,3 +258,23 @@ a.text-light:hover, a.text-light:focus {
 #GameType{
     float: right;
 }
+
+/* Start of About us page styling */
+.dev-card {
+    display: flex;
+    flex-direction: row;
+    width: 1300px;
+    margin-top: 30px;
+    margin-right: 50px;
+}
+
+.about-us {
+    width: 100px;
+}
+
+.dev-card > p {
+    text-align: center;
+    align-self: center;
+    padding: 5px;
+}
+/* End of About us page styling */
