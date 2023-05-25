@@ -74,6 +74,7 @@ namespace UnitTests.Pages.Product.Read
             // Arrange
             var product = TestHelper.ProductService.GetProducts().First();
 
+            // Variable to hold number of ratings
             int numRatings = 5;
 
             for (int i = 0; i < numRatings; i++)
@@ -81,6 +82,7 @@ namespace UnitTests.Pages.Product.Read
                 TestHelper.ProductService.AddRating(product.Id, i + 1);
             }
 
+            // Variable to calculate average of ratings
             var average = TestHelper.ProductService.GetProducts().First().Ratings.Average();
 
             // Act
