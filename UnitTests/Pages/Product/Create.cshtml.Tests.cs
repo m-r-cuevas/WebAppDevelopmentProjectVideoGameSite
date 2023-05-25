@@ -7,13 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace UnitTests.Pages.Product.Create
 {
+    /// <summary>
+    /// Unit tests for the Create page functionality. 
+    /// </summary>
     public class CreateTests
     {
         #region TestSetup
+        // Set up a new CreateModel instance
         public static CreateModel createModel;
+        // Set up new JsonFileProductService instance
         private JsonFileProductService _productService;
+        // Set up new mock logger instance
         private Mock<ILogger<CreateModel>> _mockLogger;
 
+        /// <summary>
+        /// Tests whether the create model intializes correctly
+        /// </summary>
         [SetUp]
         public void TestInitialize()
         {
@@ -24,9 +33,13 @@ namespace UnitTests.Pages.Product.Create
 
         #endregion TestSetup
         #region OnGet
+        /// <summary>
+        /// Tests whether the correct page results are return by OnGet method.
+        /// </summary>
         [Test]
 		public void OnGet_ReturnsRedirectToPageResult()
 		{
+            // Arrange
             string expId = "temp";
 			
 
