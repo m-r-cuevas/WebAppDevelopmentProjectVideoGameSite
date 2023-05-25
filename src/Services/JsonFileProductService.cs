@@ -26,6 +26,9 @@ namespace ConsoleCafe.WebSite.Services
             WebHostEnvironment = webHostEnvironment;
         }
 
+        /// <summary>
+        /// Getter for WeHostEnironment
+        /// </summary>
         public IWebHostEnvironment WebHostEnvironment { get; }
 
         /// <summary>
