@@ -13,13 +13,21 @@ namespace ConsoleCafe.WebSite.Pages.Product
     /// </summary>
     public class UpdateModel : PageModel 
     {
+       
+        // creates a logger object
         private readonly ILogger<UpdateModel> _logger;
 
-        //Create a JsonFileLocationService object called ProductService with a getter.
+        /// <summary>
+        /// Create a JsonFileLocationService object called ProductService with a getter.
+        /// </summary>
         public JsonFileProductService ProductService { get; }
 
 
-        //Initialize the ProductService object.
+        /// <summary>
+        /// Initialize the ProductService object.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="productService"></param>
         public UpdateModel(ILogger<UpdateModel> logger,JsonFileProductService productService)
         {
             ProductService = productService;
@@ -27,15 +35,23 @@ namespace ConsoleCafe.WebSite.Pages.Product
         }
 
 
-        //Create a ProductService object called Product with a getter and setter.
+        /// <summary>
+        /// Create a ProductService object called Product with a getter and setter.
+        /// </summary>
         [BindProperty]
         public ProductModel Product { get; set; }
 
+        /// <summary>
+        /// Create a string object called ModelId with a getter and setter.
+        /// </summary>
         public string ModelId { get; set; }
 
 
-        //When called, this method will get the product that the user wants to update and display it on the page.
-        //OnGet will be called when the user clicks on the Update button.
+        /// <summary>
+        /// When called, this method will get the product that the user wants to update and display it on the page.
+        /// OnGet will be called when the user clicks on the Update button.
+        /// </summary>
+        /// <param name="id"></param>
         public void OnGet(string id)
         {
             ModelId = id;
@@ -52,6 +68,11 @@ namespace ConsoleCafe.WebSite.Pages.Product
             }
         }
 
+        /// <summary>
+        /// Returns the correct field name if the product has not yet been created to add needed information.
+        /// </summary>
+        /// <param name="FieldName"></param>
+        /// <returns></returns>
         public string GetPlaceHolder(string FieldName)
         {
             if (ModelId == "temp")
@@ -77,7 +98,10 @@ namespace ConsoleCafe.WebSite.Pages.Product
         }
 
 
-        //OnPost will allow the user to update the different fields and redirect the user to the Index page after it is done.
+        /// <summary>
+        /// OnPost will allow the user to update the different fields and redirect the user to the Index page after it is done.
+        /// </summary>
+        /// <returns></returns>
         public IActionResult OnPost()
         {
             if (!ModelState.IsValid)

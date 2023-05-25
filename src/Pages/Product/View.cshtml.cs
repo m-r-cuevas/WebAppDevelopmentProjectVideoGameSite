@@ -5,18 +5,28 @@ using ConsoleCafe.WebSite.Services;
 
 namespace ConsoleCafe.WebSite.Pages.Product
 {
+    /// <summary>
+    /// This is the ViewModel class page. This will allow users to view information about the games.
+    /// </summary>
     public class ViewModel : PageModel
     {
-        // Getting the data from the JSON file.
+        /// <summary>
+        /// Getting the data from the JSON file.
+        /// </summary>
         public JsonFileProductService ProductService { get; }
 
-        // Initializing the product service.
+        /// <summary>
+        /// Initializing the product service.
+        /// </summary>
+        /// <param name="productService"></param>
         public ViewModel(JsonFileProductService productService)
         {
             ProductService = productService;
         }
 
-        // The product that will be displayed on the page.
+        /// <summary>
+        /// The product that will be displayed on the page.
+        /// </summary>
         public ProductModel Product;
 
         /// <summary>

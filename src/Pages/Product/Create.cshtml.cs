@@ -14,23 +14,34 @@ namespace ConsoleCafe.WebSite.Pages.Product
     /// </summary>
     public class CreateModel : PageModel
     {
+        // Create a logger object
         private ILogger<CreateModel> _logger;
 
 
-        //Created a JsonFileProductService object.
+        /// <summary>
+        /// Created a JsonFileProductService object.
+        /// </summary>
         public JsonFileProductService ProductService { get; }
 
-        //Object ProductService created.
+        /// <summary>
+        /// Object ProductService created.
+        /// </summary>
+        /// <param name="logger"></param>
+        /// <param name="productService"></param>
         public CreateModel(ILogger<CreateModel> logger, JsonFileProductService productService)
         {
             _logger = logger;
             ProductService = productService;
         }
 
-        //Created a ProductModel object with a getter and a setter.
+        /// <summary>
+        /// Created a ProductModel object with a getter and a setter.
+        /// </summary>
         public ProductModel Product;
 
-        //When called, this method will create a new product and redirects the user to the Update Page.
+        /// <summary>
+        /// When called, this method will create a new product and redirects the user to the Update Page.
+        /// </summary>
         public IActionResult OnGet()
         {
             return RedirectToPage("./Update", new { Id = "temp" });
