@@ -8,9 +8,13 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.Index
 {
+    /// <summary>
+    /// Unit tests for index page functionality.
+    /// </summary>
     public class IndexTests
     {
         #region TestSetup
+        // Set up new IndexModel instance
         public static IndexModel pageModel;
 
         /// <summary>
