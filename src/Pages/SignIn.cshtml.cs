@@ -9,7 +9,8 @@ namespace ConsoleCafe.WebSite.Pages
     /// </summary>
     public class SignInModel : PageModel
     {
-        private readonly ILogger<SignInModel> _logger; //Readonly ILogger object that allows logging.
+        //Readonly ILogger object that allows logging.
+        private readonly ILogger<SignInModel> _logger; 
 
         /// <summary>
         /// SignInModel constructor
