@@ -8,9 +8,13 @@ using ConsoleCafe.WebSite.Pages;
 
 namespace UnitTests.Pages.About
 {
+    /// <summary>
+    /// Unit tests for About page functionality.
+    /// </summary>
     public class AboutTests
     {
         #region TestSetup
+        // Set up new AboutModel instance
         public static AboutModel pageModel;
 
         /// <summary>
