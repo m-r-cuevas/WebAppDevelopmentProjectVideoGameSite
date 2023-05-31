@@ -31,7 +31,7 @@
     "img": "/images/tod.png",
     "Url": "https://images4.alphacoders.com/119/1199740.jpg?dl=1",
     "Title": "Edit here",
-    "Description": "A Gunslinger Tale in Mexico, you can play as two brothers who are searching for their father's killer.",
+    "Description": "A Gunslinger Tale in Mexico, you can play as two brothers who are searching for their father\u0027s killer.",
     "ProductType": "FPS",
     "Ratings": null
   },
@@ -53,7 +53,7 @@
     "img": "/images/rl.png",
     "Url": "https://images2.alphacoders.com/653/653476.jpg?dl=1",
     "Title": "Edit here",
-    "Description": "A fantastical sport-based video game, developed by Psyonix (It's 'Soccer With Cars!')",
+    "Description": "A fantastical sport-based video game, developed by Psyonix (It\u0027s \u0027Soccer With Cars!\u0027)",
     "ProductType": "Sports",
     "Ratings": null
   },
@@ -144,6 +144,16 @@
     "Description": "A fantasy action role-playing game, where the player may freely roam over the land of Skyrim, an open world environment consisting of wilderness expanses, dungeons, caves, cities, towns, fortresses, and villages.",
     "ProductType": "Adventure",
     "Ratings": null
+  },
+  {
+    "Id": "14",
+    "Name": "Red Dead Redemption 2",
+    "Maker": "Rockstar Games",
+    "img": "/images/Rdr2.png",
+    "Url": "https://images6.alphacoders.com/749/749806.png",
+    "Title": null,
+    "Description": "The story is set in a fictionalized representation of the United States in 1899 and follows the exploits of outlaw Arthur Morgan, a member of the Van der Linde gang, who must deal with the decline of",
+    "ProductType": "Adventure",
+    "Ratings": null
   }
-
 ]
