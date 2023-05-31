@@ -21,7 +21,7 @@
         </thead>
         <tbody>
 
-            <!-- Displays only the properties selected -Ravi. -->
+            <!-- Displays only the properties selected-->
             @foreach (var property in Model.Product.GetType().GetProperties()
             .Where(p => p.Name == "Maker" || p.Name == "Description" || p.Name == "ProductType"))
     {
