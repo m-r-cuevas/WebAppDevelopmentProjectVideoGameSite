@@ -1,6 +1,9 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.Collections.Generic;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace ConsoleCafe.WebSite.Models
 {
@@ -43,7 +46,8 @@ namespace ConsoleCafe.WebSite.Models
         [StringLength(200, MinimumLength = 1, ErrorMessage = "200 charcter limit.")]
         public string Description { get; set; }
 
-        //String Category of the game
+        //String Category of the game.
+        [Required(ErrorMessage = "Please select a category from the list. ")]
         public string ProductType { get; set; }
 
         //Integer array of ratings of the product - Not required.
