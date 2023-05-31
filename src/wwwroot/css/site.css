@@ -233,6 +233,13 @@ h4 {
     color: #FFFFFF;
 }
 
+/* Added a font color of white for level 5 headers */
+h5 {
+    font-family: 'Ultra', sans-serif;
+    font-weight: 300;
+    color: #FFFFFF;
+}
+
 ul {
     font-family: 'Pantra', sans-serif;
 }
