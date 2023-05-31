@@ -74,6 +74,18 @@ a {
         border-color: #e9a8a6;
     }
 
+.btn-second {
+    color: #fff;
+    font-family: 'Pantra', sans-serif;
+    background-color: #0e4b6d;
+    border-color: #252152;
+}
+
+    .btn-second:hover {
+        color: #fff;
+        background-color: darkorange;
+        border-color: #e9a8a6;
+    }
 /* Add class for filter labels on home page */
 .filter-label {
     color: #FFFFFF;
