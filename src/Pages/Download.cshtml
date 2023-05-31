@@ -1,8 +1,39 @@
-﻿@page
+﻿@page "{id}"
+@using ConsoleCafe.WebSite.Services
+@inject JsonFileProductService ProductService
 @model DownloadModel
 @{
     ViewData["Title"] = "Download Game";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>This is a placeholder page for downloading games.</p>
+<div class="content-bgcolor">
+    <h1 class="title" id="productTitle">@Model.Product.Name</h1>
+    <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
+
+    <!-- Create a table to display every property of the Product class-->
+    <table class="table table-bordered table-striped content-container">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <!-- Displays only the properties selected -Ravi. -->
+            @foreach (var property in Model.Product.GetType().GetProperties()
+            .Where(p => p.Name == "Maker" || p.Name == "Description" || p.Name == "ProductType"))
+            {
+                <tr>
+                    <td>@property.Name</td>
+                    <!-- if the property is the Rating property, display the average of the ratings, otherwise display the value of the property-->
+                    <!--Call the GetAverageRating in the ReadModel class to get the average of the ratings-->
+                    <td>@(property.Name == "Ratings" ? Model.GetAverageRating(Model.Product.Id) : property.GetValue(Model.Product))</td>
+
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>
