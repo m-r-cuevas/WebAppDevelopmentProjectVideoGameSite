@@ -126,8 +126,9 @@ namespace ConsoleCafe.WebSite.Services
             }
             // Update the data to the new passed in values
             productData.Name = data.Name;
+            productData.Maker = data.Maker;
             productData.Description = data.Description.Trim();
-            productData.Url = data.Url;
+            productData.ProductType = data.ProductType;
             productData.Image = data.Image;
 
             SaveData(products);
