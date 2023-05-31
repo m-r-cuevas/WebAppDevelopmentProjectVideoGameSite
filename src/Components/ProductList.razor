@@ -77,12 +77,9 @@
                                     <!-- Using navigation updated the onclick funtionality to respective destination  -->
                                     <button @onclick="(e => MovetoView(product.Id))" id="ViewMoreButton_@product.Id" class="btn btn-primary">View More</button>
                                 </small>
-                                <!-- Added right aligned download button. Still directs to product info.  -->
+                                <!-- Added right aligned download button. Should direct to download  -->
                                 <small class="text-muted float-right">
-                                    <button @onclick="(e => SelectProduct(product.Id))"
-                                        data-toggle="modal" data-target="#productModal" class="btn btn-primary" id="download-button">
-                                        Download
-                                    </button>
+                                    <button @onclick="(e => MovetoDownload(product.Id))" id="DownloadButton_@product.Id" class="btn btn-primary">Download</button>
                                 </small>
                             </div>
                         </div>
@@ -106,29 +103,6 @@
 </div>
 
 
-
-<!--Page responsive popup code that displays that download button was clicked  -->
-@if(selectedProduct != null)
-{
- <div class="modal fade" id="productModal" tabindex="-1" role="dialog" aria-labelledby="productTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="productTitle">Page Responsive</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="card">
-           <h3>You have clicked on the tile buttons.</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-</div>
-}
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 @code 
@@ -149,10 +123,16 @@
         //GetCurrentRating();
     }
     
-    // Defining a function and setting the path for the nav manager.
+    // Defining a function and setting the path for the nav manager. (direct to View page)
     void MovetoView(string id)
     {
         NavManager.NavigateTo("../Product/View/" + id, true);
+    }
+
+    // Defining a function and setting the path for the nav manager. (Direct to Download page)
+    void MovetoDownload(string id)
+    {
+        NavManager.NavigateTo("../Download/" + id, true);
     }
 
     void UpdateFilterText(string text)
