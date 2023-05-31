@@ -85,6 +85,8 @@ namespace ConsoleCafe.WebSite.Pages.Product
                         return "Enter the maker of the game.";
                     case "Description":
                         return "Enter a description for the game.";
+                    case "ProductType":
+                        return "Enter the category for the game";
                     case "Image":
                         return "Enter the image url for the game.";
                     default: return "";
@@ -93,9 +95,17 @@ namespace ConsoleCafe.WebSite.Pages.Product
             }
 
             //Returns the value of property of the game.
-            return Product.GetType().GetProperty(FieldName)
-                .GetValue(Product, null).ToString();
-        }
+            var stringToReturn = Product.GetType().GetProperty(FieldName)
+                .GetValue(Product, null);
+
+            if (stringToReturn == null)
+            {
+                stringToReturn = "Empty";
+            }
+
+            //return the value of the Location property
+            return (string)stringToReturn;
+    }
 
 
         /// <summary>
