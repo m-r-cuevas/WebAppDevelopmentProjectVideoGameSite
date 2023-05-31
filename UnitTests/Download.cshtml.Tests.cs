@@ -5,6 +5,8 @@ using NUnit.Framework;
 using Moq;
 
 using ConsoleCafe.WebSite.Pages;
+using ConsoleCafe.WebSite.Pages.Product;
+using System.Linq;
 
 namespace UnitTests.Pages.Download
 {
@@ -23,35 +25,32 @@ namespace UnitTests.Pages.Download
         [SetUp]
         public void TestInitialize()
         {
-            var MockLoggerDirect = Mock.Of<ILogger<DownloadModel>>();
-
-            pageModel = new DownloadModel(MockLoggerDirect)
+            pageModel = new DownloadModel(TestHelper.ProductService)
             {
-                PageContext = TestHelper.PageContext,
-                TempData = TestHelper.TempData,
             };
         }
 
         #endregion TestSetup
 
         #region OnGet
+
         /// <summary>
-        /// Test whether Download model is set up correctly on get
+        /// Test case to check if the game selected is correct.
         /// </summary>
         [Test]
-        public void OnGet_Valid_Activity_Set_Should_Return_RequestId()
+        public void OnGet_Should_Select_Matching_Id()
         {
             // Arrange
+            var data = TestHelper.ProductService.GetProducts().First();
 
             // Act
-            pageModel.OnGet();
-
-            // Reset
+            pageModel.OnGet(data.Id);
 
             // Assert
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(data.Id, pageModel.Product.Id);
         }
-
         #endregion OnGet
+
     }
 }
