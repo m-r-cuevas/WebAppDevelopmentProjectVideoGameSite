@@ -61,6 +61,7 @@ a {
     color: #0366d6;
 }
 
+/* Styling for all the primary buttons*/
 .btn-primary {
     color: #fff;
     font-family: 'Pantra', sans-serif;
@@ -74,6 +75,7 @@ a {
         border-color: #e9a8a6;
     }
 
+/*Styling for the Create button*/
 .btn-second {
     color: #fff;
     font-family: 'Pantra', sans-serif;
@@ -86,6 +88,7 @@ a {
         background-color: darkorange;
         border-color: #e9a8a6;
     }
+
 /* Add class for filter labels on home page */
 .filter-label {
     color: #FFFFFF;
