@@ -1,5 +1,6 @@
 ﻿@page "{id}"
 @using ConsoleCafe.WebSite.Services
+@using Microsoft.AspNetCore.Components.Web
 @inject JsonFileProductService ProductService
 @model DownloadModel
 @{
@@ -37,3 +38,19 @@
     </table>
 
 </div>
+
+<br />
+<br />
+
+<div class="row">
+    <button onclick="Download_onclick(@Model.Product.Name)" class="btn btn-primary">Download</button>
+</div>
+
+<script language="text/javascript">
+    function Download_onclick(string name){
+        alert("Do you want to download ");
+    };
+</script>
+
+
+
