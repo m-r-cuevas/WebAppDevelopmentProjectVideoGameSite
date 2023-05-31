@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace ConsoleCafe.WebSite.Models
+﻿namespace ConsoleCafe.WebSite.Models
 {
     /// <summary>
     /// enum for Product/Game Category
@@ -35,6 +30,7 @@ namespace ConsoleCafe.WebSite.Models
                 ProductTypeEnum.Racing => "Racing Game",
                 ProductTypeEnum.Sports => "Sports Game",
                 ProductTypeEnum.Adventure => "Adventure Game",
+                _ => ""
             } ;
         }
     }
