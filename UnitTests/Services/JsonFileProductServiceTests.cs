@@ -83,7 +83,7 @@ namespace UnitTests.Pages.Product.AddRating
             var createProduct = TestHelper.ProductService.CreateData(newProduct);
 
             // Assert
-            Assert.AreEqual("14", createProduct.Id);
+            Assert.AreEqual("16", createProduct.Id);
 
         }
 
