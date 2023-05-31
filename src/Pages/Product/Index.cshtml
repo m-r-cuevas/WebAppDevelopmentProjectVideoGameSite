@@ -5,11 +5,6 @@
 }
 
 <div class="container">
-    <!-- Added a create button at the top of the index page.-->
-    <a asp-page="Create" class="btn btn-link">+ Create</a>
-    <!-- Added a message that we will be adding more games to top of index page -->
-    <h4>More games coming soon! Please check back to see what we add!</h4>
-    
     <table class="table table-bordered table-striped bg-table">
         <thead>
             <tr>
@@ -29,3 +24,12 @@
         </tbody>
     </table>
 </div>
+
+    <!-- Added a message that we will be adding more games to top of index page -->
+    <h4>More games coming soon! Please check back to see what we add or Create your own games here</h4>
+    <!-- Added a create button at the top of the index page.-->
+    <div class="container">
+        <div class="text-center">
+            <a asp-page="Create" class="btn btn-second">+ Create</a>
+        </div>
+    </div>
