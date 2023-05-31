@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using ConsoleCafe.WebSite.Models;
 using ConsoleCafe.WebSite.Services;
@@ -33,10 +34,19 @@ namespace ConsoleCafe.WebSite.Pages.Product
         /// Called when the page is requested.
         /// </summary>
         /// <param name="id">The ID of the product to display.</param>
-        public void OnGet(string id)
+        public IActionResult OnGet(string id)
         {
             // Find the product with the specified ID.
             Product = ProductService.GetProducts().FirstOrDefault(m => m.Id.Equals(id));
+
+            if (Product == null)
+            {
+                TempData["InvalidGameMessage"] = "The requested game is invalid. You are being redirected back to the games list.";
+                TempData.Keep("InvalidGameMessage"); // Persist the message for the next request
+                return RedirectToPage("/Error");
+            }
+
+            return Page();
         }
 
         /// <summary>
