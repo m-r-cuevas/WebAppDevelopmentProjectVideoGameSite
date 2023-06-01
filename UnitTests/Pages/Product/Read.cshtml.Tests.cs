@@ -2,6 +2,11 @@
 using NUnit.Framework;
 using ConsoleCafe.WebSite.Pages.Product;
 using System;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc.ViewFeatures;
+using Microsoft.AspNetCore.Mvc;
+using Moq;
+
 namespace UnitTests.Pages.Product.Read
 {
     /// <summary>
@@ -13,6 +18,9 @@ namespace UnitTests.Pages.Product.Read
 
         //Instance for ViewModel
         public static ViewModel pageModel;
+
+        // A message for testing
+        private const string redirectMessage = "The requested game is invalid.";
 
         /// <summary>
         /// Initializing the model.
@@ -44,6 +52,35 @@ namespace UnitTests.Pages.Product.Read
             Assert.AreEqual(true, pageModel.ModelState.IsValid);
             Assert.AreEqual(data.Id, pageModel.Product.Id);
         }
+
+        /// <summary>
+        /// The unit test case to check if the product/game is null then
+        /// should return to the error page.
+        /// </summary>
+        [Test]
+        public void OnGet_With_Null_Product_Should_Redirect_To_Error()
+        {
+            // Arrange
+            var id = "900";
+            // need to Mock the TempData, TempData is a feature in .NET
+            pageModel.TempData = new TempDataDictionary(new DefaultHttpContext(), Mock.Of<ITempDataProvider>());
+
+            // Act
+            var result = pageModel.OnGet(id);
+
+            // Assert
+            Assert.IsTrue(result is RedirectToPageResult);
+            var redirectResult = (RedirectToPageResult)result;
+            Assert.AreEqual("/Error", redirectResult.PageName);
+
+            // Assert TempData message
+            var tempMessage = pageModel.TempData["InvalidGameMessage"];
+            Assert.AreEqual(redirectMessage, tempMessage);
+
+            Assert.AreEqual(null, pageModel.Product);
+            Assert.IsTrue(pageModel.ModelState.IsValid);
+        }
+
         #endregion OnGet
 
         #region GetAverageRating
