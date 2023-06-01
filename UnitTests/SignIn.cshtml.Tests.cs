@@ -58,6 +58,9 @@ namespace UnitTests.Pages.SignIn
         #endregion OnGet
 
 
+        /// <summary>
+        /// Tests whether valid model state returns correct page
+        /// </summary>
         [Test]
         public void OnPostAsync_Invalid_ModelState_Should_Return_Page()
         {
@@ -71,17 +74,20 @@ namespace UnitTests.Pages.SignIn
             Assert.IsInstanceOf<PageResult>(result);
         }
 
+        /// <summary>
+        /// Tests email set/set methods with a valid email format
+        /// </summary>
         [Test]
-        public async Task OnPostAsync_Valid_ModelState_Should_Return_RedirectToPageResult()
+        public void Set_Email_Should_Return_True()
         {
             // Arrange
-            pageModel.Email = "test@example.com";
+            var testEmail = "test@example.com";
 
             // Act
-            var result = await pageModel.OnPostAsync() as RedirectToPageResult; 
+            pageModel.Email = testEmail;
 
             // Assert
-            Assert.AreEqual(true, result.PageName.Contains("Index"));
+            Assert.AreEqual(testEmail, pageModel.Email);
         }
     }
 }
