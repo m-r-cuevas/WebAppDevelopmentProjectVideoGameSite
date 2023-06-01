@@ -43,7 +43,7 @@ namespace ConsoleCafe.WebSite.Models
 
         //String Description of the game is required.
         [Required(ErrorMessage = "Description is required")]
-        [StringLength(200, MinimumLength = 1, ErrorMessage = "200 charcter limit.")]
+        [StringLength(2000, MinimumLength = 1, ErrorMessage = "2000 charcter limit.")]
         public string Description { get; set; }
 
         //String Category of the game.
