@@ -39,7 +39,8 @@
 <br />
 
 <div class="row">
-    <a href="@Model.Product.Image" class="btn btn-primary" download=""@Model.Product.Name".jpg">Download</a>
+    <!-- Added download functionality (downloads the game image) -->
+    <a href="@Model.Product.Image" class="btn btn-primary" onclick="return confirm('Are you sure you want to download @Model.Product.Name?')" download="" @Model.Product.Name".jpg">Download</a>
 </div>
 
 
