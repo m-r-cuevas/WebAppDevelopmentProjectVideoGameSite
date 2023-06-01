@@ -11,30 +11,27 @@
     <h1 class="title" id="productTitle">@Model.Product.Name</h1>
     <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
 
-    <!-- Create a table to display every property of the Product class-->
-    <table class="table table-bordered table-striped content-container">
-        <thead>
-            <tr>
-                <th>Property</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <!-- Displays only the properties selected -Ravi. -->
-            @foreach (var property in Model.Product.GetType().GetProperties()
-            .Where(p => p.Name == "Maker" || p.Name == "Description" || p.Name == "ProductType"))
+    <!-- Displays only the properties selected-->
+    <div>
+        @foreach (var property in Model.Product.GetType().GetProperties()
+        .Where(p => p.Name == "Description" || p.Name == "Maker" || p.Name == "ProductType"))
+        {
+            if (@property.Name == "Description")
             {
-                <tr>
-                    <td>@property.Name</td>
-                    <!-- display the value of the property-->
-                    <td>@property.GetValue(Model.Product)</td>
-
-                </tr>
+                <h5 class="black-color">About the Game</h5>
             }
-        </tbody>
+            if (@property.Name == "Maker")
+            {
+                <h5 class="black-color">Publisher</h5>
+            }
+            if (@property.Name == "ProductType")
+            {
+                <h5 class="black-color">Game Genre</h5>
+            }
 
-    </table>
+            <p>@property.GetValue(Model.Product)</p>
+        }
+    </div>
 
 </div>
 
