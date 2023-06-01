@@ -3,8 +3,7 @@ using ConsoleCafe.WebSite.Pages.Product;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Moq;
-using static System.Net.Mime.MediaTypeNames;
-using System.Linq;
+using ConsoleCafe.WebSite.Models;
 
 namespace UnitTests.Pages.Product.Update
 {
@@ -38,7 +37,7 @@ namespace UnitTests.Pages.Product.Update
         /// And also check if its valid or not
         /// </summary>
         [Test]
-        public void OnGet_With_Id_Temp_Returns_Location_With_Temp_Id()
+        public void OnGet_With_Id_Temp_Returns_Product_With_Temp_Id()
         {
             // Arrange
             var id = "temp";
@@ -54,17 +53,17 @@ namespace UnitTests.Pages.Product.Update
         /// Tests whether OnGet returns the correct product when given an valid id
         /// </summary>
         [Test]
-        public void OnGet_With_Id_Valid_Returns_Location_With_Valid_Id()
+        public void OnGet_With_Id_Valid_Returns_Product_With_Valid_Id()
         {
             // Arrange
-            var id = "2";
+            var expProductId = "2";
 
             //Act
-            pageModel.OnGet(id);
-            var result = TestHelper.ProductService.GetProducts().First();
+            pageModel.OnGet(expProductId);
 
             //Assert
-            Assert.AreEqual(result.Id, id);
+            Assert.AreEqual(true, pageModel.ModelState.IsValid);
+            Assert.AreEqual(expProductId, pageModel.Product.Id);
         }
 
 
@@ -154,6 +153,7 @@ namespace UnitTests.Pages.Product.Update
             string expectedPlaceHolderName = "Enter the name of the game.";
             string expectedPlaceHolderMaker = "Enter the maker of the game.";
             string expectedPlaceHolderDescription = "Enter a description for the game.";
+            string expectedPlaceHolderProductType = "Enter a category for the game.";
             string expectedPlaceHolderImage = "Enter the image url for the game.";
             string expectedPlaceHolderRandom = "";
 
@@ -162,6 +162,7 @@ namespace UnitTests.Pages.Product.Update
             string actualPlaceHolderForName = pageModel.GetPlaceHolder("Name");
             string actualPlaceHolderForMaker = pageModel.GetPlaceHolder("Maker");
             string actualPlaceHolderForDescription = pageModel.GetPlaceHolder("Description");
+            string actualPlaceHolderForProductType = pageModel.GetPlaceHolder("ProductType");
             string actualPlaceHolderForImage = pageModel.GetPlaceHolder("Image");
             string actualPlaceHolderForRandom = pageModel.GetPlaceHolder("Random");
 
@@ -169,6 +170,7 @@ namespace UnitTests.Pages.Product.Update
             Assert.AreEqual(expectedPlaceHolderName, actualPlaceHolderForName);
             Assert.AreEqual(expectedPlaceHolderMaker, actualPlaceHolderForMaker);
             Assert.AreEqual(expectedPlaceHolderDescription, actualPlaceHolderForDescription);
+            Assert.AreEqual(expectedPlaceHolderProductType, actualPlaceHolderForProductType);
             Assert.AreEqual(expectedPlaceHolderImage, actualPlaceHolderForImage);
             Assert.AreEqual(expectedPlaceHolderRandom, actualPlaceHolderForRandom);
         }
@@ -187,6 +189,7 @@ namespace UnitTests.Pages.Product.Update
                 Name = "Test1",
                 Maker = "Test1",
                 Description = "Test1.",
+                ProductType = "Test 1",
                 Image = "Test1",
                 Ratings = null
             };
@@ -197,6 +200,35 @@ namespace UnitTests.Pages.Product.Update
 
             // Assert
             Assert.AreEqual(expectedPropertyValue, actualPropertyValue);
+        }
+
+        /// <summary>
+        /// Test to check invalid or null placeholder
+        /// </summary>
+        [Test]
+        public void GetPlaceHolder_Invalid_PlaceHolder_Should_Return_EmptyString()
+        {
+            // Arrange
+            pageModel.ModelId = "1";
+            pageModel.Product = new ProductModel
+            {
+                Id = "1",
+                Name = "Test1",
+                Maker = null,
+                Description = null,
+                ProductType = "Test 1",
+                Image = "Test1",
+                Ratings = null
+            };
+            string expectedPropertyValue = "Empty";
+
+            // Act
+            string actualMakerValue = pageModel.GetPlaceHolder("Maker");
+            string actualDescriptionValue = pageModel.GetPlaceHolder("Description");
+
+            // Assert
+            Assert.AreEqual(expectedPropertyValue, actualMakerValue);
+            Assert.AreEqual(expectedPropertyValue, actualDescriptionValue);
         }
 
         #endregion GetPlaceHolder
