@@ -41,7 +41,7 @@ namespace ConsoleCafe.WebSite.Pages.Product
 
             if (Product == null)
             {
-                TempData["InvalidGameMessage"] = "The requested game is invalid. You are being redirected back to the games list.";
+                TempData["InvalidGameMessage"] = "The requested game is invalid.";
                 TempData.Keep("InvalidGameMessage"); // Persist the message for the next request
                 return RedirectToPage("/Error");
             }
