@@ -30,6 +30,22 @@ namespace UnitTests.Models
 			Assert.AreEqual("First Person Shooter Game", fps);
 		}
 
-		#endregion DisplayName
-	}
+        #endregion DisplayName
+
+        ///<summary>
+        ///Test behaviour of DisplayName method for an out-of-range
+        ///Enum value of the ProductTypeEnum. It does not require any setup.
+        ///</summary>
+        [Test]
+        public void DisplayName_Enum_Out_Of_Range_Should_Return_Default()
+        {
+            // Arrange
+
+            // Act
+            var result = ProductTypeEnumExtensions.DisplayName((ProductTypeEnum)7);
+
+            // Assert
+            Assert.AreEqual("", result);
+        }
+    }
 }
