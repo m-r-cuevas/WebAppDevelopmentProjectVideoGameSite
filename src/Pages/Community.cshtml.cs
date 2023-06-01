@@ -52,7 +52,7 @@ namespace ConsoleCafe.WebSite.Pages
             }
 
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("Console Cafe", "consolecafewebsite@outlook.com"));
+            message.From.Add(new MailboxAddress("Console Cafe", "consolecafegaming@outlook.com"));
             message.To.Add(new MailboxAddress("", Email));
             message.Subject = "Welcome to Console Cafe Community";
             var bodyBuilder = new BodyBuilder();
@@ -72,7 +72,7 @@ namespace ConsoleCafe.WebSite.Pages
             using (var client = new SmtpClient())
             {
                 await client.ConnectAsync("smtp-mail.outlook.com", 587, SecureSocketOptions.StartTls);
-                await client.AuthenticateAsync("consolecafewebsite@outlook.com", "Console@111");
+                await client.AuthenticateAsync("consolecafegaming@outlook.com", "Console@111");
                 await client.SendAsync(message);
                 await client.DisconnectAsync(true);
             }
