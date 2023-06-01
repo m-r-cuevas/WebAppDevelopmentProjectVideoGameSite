@@ -116,13 +116,6 @@
     int voteCount = 0;
     string voteLabel;
     
-    void SelectProduct(string productId)
-    {
-        selectedProductId = productId;
-        selectedProduct = ProductService.GetProducts().First(x => x.Id == productId);
-        //GetCurrentRating();
-    }
-    
     // Defining a function and setting the path for the nav manager. (direct to View page)
     void MovetoView(string id)
     {
