@@ -5,6 +5,7 @@
     /// </summary>
     public enum ProductTypeEnum
     { 
+        Undefined = 999,
         FPS = 0,
         Racing = 1,
         Sports = 2,
@@ -30,6 +31,7 @@
                 ProductTypeEnum.Racing => "Racing Game",
                 ProductTypeEnum.Sports => "Sports Game",
                 ProductTypeEnum.Adventure => "Adventure Game",
+                ProductTypeEnum.Undefined => "Undefined",
                 _ => ""
             } ;
         }
