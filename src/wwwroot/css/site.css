@@ -341,3 +341,57 @@ a.text-light:hover, a.text-light:focus {
 .black-color{
     color: black;
 }
+
+/*Styling for community page*/
+
+
+.logo-img {
+    max-width: 100%;
+    height: auto;
+    width: calc(100% + 50px);
+}
+
+.logo-text-overlay {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Ultra', sans-serif;
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.email-form {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+    .email-form label {
+        color: white;
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .email-form input[type="email"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-right: 10px;
+        width: 200px;
+    }
+    .email-form button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+    }
