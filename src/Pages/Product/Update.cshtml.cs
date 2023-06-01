@@ -86,7 +86,7 @@ namespace ConsoleCafe.WebSite.Pages.Product
                     case "Description":
                         return "Enter a description for the game.";
                     case "ProductType":
-                        return "Enter the category for the game";
+                        return "Enter a category for the game.";
                     case "Image":
                         return "Enter the image url for the game.";
                     default: return "";
