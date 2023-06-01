@@ -5,6 +5,9 @@ using NUnit.Framework;
 using Moq;
 
 using ConsoleCafe.WebSite.Pages;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace UnitTests.Pages.SignIn
 {
@@ -14,8 +17,8 @@ namespace UnitTests.Pages.SignIn
     public class SignInTests
     {
         #region TestSetup
-        // Set up new SignInModel instance
-        public static SignInModel pageModel;
+        // Set up new CommunityModel instance
+        public static CommunityModel pageModel;
 
         /// <summary>
         /// Set up necessary for SignIn page tests and tests initializing page model
@@ -23,9 +26,9 @@ namespace UnitTests.Pages.SignIn
         [SetUp]
         public void TestInitialize()
         {
-            var MockLoggerDirect = Mock.Of<ILogger<SignInModel>>();
+            var MockLoggerDirect = Mock.Of<ILogger<CommunityModel>>();
 
-            pageModel = new SignInModel(MockLoggerDirect)
+            pageModel = new CommunityModel(MockLoggerDirect)
             {
                 PageContext = TestHelper.PageContext,
                 TempData = TestHelper.TempData,
@@ -53,5 +56,32 @@ namespace UnitTests.Pages.SignIn
         }
 
         #endregion OnGet
+
+
+        [Test]
+        public void OnPostAsync_Invalid_ModelState_Should_Return_Page()
+        {
+            // Arrange
+            pageModel.ModelState.AddModelError("Email", "Email is required.");
+
+            // Act
+            var result = pageModel.OnPostAsync().GetAwaiter().GetResult();
+
+            // Assert
+            Assert.IsInstanceOf<PageResult>(result);
+        }
+
+        [Test]
+        public async Task OnPostAsync_Valid_ModelState_Should_Return_RedirectToPageResult()
+        {
+            // Arrange
+            pageModel.Email = "test@example.com";
+
+            // Act
+            var result = await pageModel.OnPostAsync() as RedirectToPageResult; 
+
+            // Assert
+            Assert.AreEqual(true, result.PageName.Contains("Index"));
+        }
     }
 }
