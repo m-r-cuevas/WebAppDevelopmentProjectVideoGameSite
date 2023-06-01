@@ -11,32 +11,36 @@
     <h1 class="title" id="productTitle">@Model.Product.Name</h1>
     <img class="card-img" src='@Model.Product.Image' alt='Image for @Model.Product.Title'>
 
-    <!-- Create a table to display every property of the Product class-->
-    <table class="table table-bordered table-striped content-container">
-        <thead>
-            <tr>
-                <th>Property</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tbody>
-
             <!-- Displays only the properties selected-->
+            <div>
             @foreach (var property in Model.Product.GetType().GetProperties()
-            .Where(p => p.Name == "Maker" || p.Name == "Description" || p.Name == "ProductType"))
-    {
-            <tr>
-                <td>@property.Name</td>
-                <!-- if the property is the Rating property, display the average of the ratings, otherwise display the value of the property-->
-                <!--Call the GetAverageRating in the ReadModel class to get the average of the ratings-->
-                <td>@(property.Name == "Ratings" ? Model.GetAverageRating(Model.Product.Id) : property.GetValue(Model.Product))</td>
+            .Where(p => p.Name == "Description" || p.Name == "Maker" || p.Name == "ProductType"))
+            {
+                    @*<tr>
+                        <td>@property.Name</td>
+                        <!-- if the property is the Rating property, display the average of the ratings, otherwise display the value of the property-->
+                        <!--Call the GetAverageRating in the ReadModel class to get the average of the ratings-->
+                        <td>@(property.Name == "Ratings" ? Model.GetAverageRating(Model.Product.Id) : property.GetValue(Model.Product))</td>
 
-            </tr>
-    }
-        </tbody>
+                    </tr>*@
+                
 
-    </table>
+                if (@property.Name == "Description")
+                {
+                    <h5 class="black-color">About the Game</h5>
+                }
+                if(@property.Name == "Maker")
+                {
+                    <h5 class="black-color">Publisher</h5>
+                }
+                if (@property.Name == "ProductType")
+                {
+                    <h5 class="black-color">Game Genre</h5>
+                }
 
+                <p>@property.GetValue(Model.Product)</p>
+            }
+            </div>
 </div>
 
 <br />
