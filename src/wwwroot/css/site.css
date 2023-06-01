@@ -324,3 +324,7 @@ a.text-light:hover, a.text-light:focus {
 .normal-text {
     font-family: 'Pantra', sans-serif;
 }
+
+.black-color{
+    color: black;
+}
